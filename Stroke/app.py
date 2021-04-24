@@ -13,10 +13,10 @@ modelHelper = ModelHelper()
 
 #endpoint
 # Favicon
-@app.route('/brain.png')
+@app.route('/brain.icon')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
-                          'brain.png',mimetype='image/vnd.microsoft.icon')
+                          'brain.icon',mimetype='image/vnd.microsoft.icon')
 
 # Route to render index.html template
 @app.route("/")
