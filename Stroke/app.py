@@ -9,7 +9,8 @@ import logging
 
 #init app and class
 app = Flask(__name__)
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+# app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 - Tried changing to 1
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
 modelHelper = ModelHelper()
 
 #endpoint
@@ -24,6 +25,41 @@ def favicon():
 def home():
     # Return template and data
     return render_template("index.html")
+
+@app.route("/ml")
+def model_page():
+    # Return template and data
+    return render_template("ml.html")
+
+@app.route("/dashboard")
+def dashboard():
+    # Return template and data
+    return render_template("dashboard.html")
+
+@app.route("/dashboardmap")
+def map():
+    # Return template and data
+    return render_template("map.html")
+
+@app.route("/data")
+def data():
+    # Return template and data
+    return render_template("data.html")
+
+@app.route("/exploration")
+def exploration():
+    # Return template and data
+    return render_template("exploration.html")
+
+@app.route("/resources")
+def resources():
+    # Return template and data
+    return render_template("resources.html")
+
+@app.route("/about")
+def about_us():
+    # Return template and data
+    return render_template("about.html")
 
 @app.route("/makePredictions", methods=["POST"])
 def makePredictions():
