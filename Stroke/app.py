@@ -96,7 +96,7 @@ def makePredictions():
     return(jsonify({"ok": True, "prediction": str(prediction)}))
 
 ####################################
-# ADD MORE ENDPOINTS
+# ADD MORE ENDPOINTS 
 
 ###########################################
 

@@ -49,11 +49,11 @@ function makePredictions() {
             // print it
             console.log(returnedData);
 
-            if (returnedData["prediction"] <= .01) {
+            if (returnedData["prediction"] <= .25) {
                 $("#output").text("Very Unlikely");
-            } else if (returnedData["prediction"] <= .1) {
+            } else if (returnedData["prediction"] <= .5) {
                 $("#output").text("Unlikely");
-            } else if (returnedData["prediction"] <=.25) {
+            } else if (returnedData["prediction"] <=.75) {
                 $("#output").text("Likely");
             }else {
                 $("#output").text("Very likely!");
