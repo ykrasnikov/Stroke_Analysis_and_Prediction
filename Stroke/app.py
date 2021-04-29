@@ -7,7 +7,7 @@ from xgboost import XGBClassifier
 from modelHelper import ModelHelper
 import logging
 
-#init app and class
+#init app and class 
 app = Flask(__name__)
 # app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 - Tried changing to 1
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
