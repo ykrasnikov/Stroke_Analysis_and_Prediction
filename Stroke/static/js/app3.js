@@ -22,14 +22,6 @@ function resetFilters() {
 
     $("#gender_choice").val("");
 
-    // $("#id_choice").val("");
-
-    $("#Age_Range_Choice").val("");
-
-    $("#BMI_Category_Choice").val("");
-
-    $("#avg_glucose_choice").val("");
-
     $("#hypertension_choice").val("");
 
     $("#heart_disease_choice").val("");
@@ -47,21 +39,17 @@ function resetFilters() {
 
 function buildTable() {
     // live path
-    d3.csv("static/data/healthcare-dataset-stroke-data_filters.csv").then(function(strokeData) {
+    d3.csv("static/data/healthcare-dataset-stroke-data.csv").then(function(strokeData) {
 
     // practice path
-    // d3.csv("../static/data/healthcare-dataset-stroke-data_filters.csv").then(function(strokeData) {
+    // d3.csv("../static/data/healthcare-dataset-stroke-data.csv").then(function(strokeData) {
 
-        // var idFilter = parseInt($("#id").val()); 
         var genderFilter = $("#gender_choice").val();
-        var agerangeFilter = ($("#Age_Range_Choice").val());
         var hypertensionFilter = ($("#hypertension_choice").val());
         var heartdiseaseFilter = ($("#heart_disease_choice").val());
         var marriedFilter = $("#ever_married_choice").val();
         var workFilter = $("#work_type_choice").val();
         var residenceFilter = $("#residence_type_choice").val();
-        var avgglucoseFilter = ($("#avg_glucose_choice").val());
-        var bmiFilter = $("#BMI_Category_Choice").val();
         var smokingFilter = $("#smoking_status_choice").val();
         var strokeFilter = ($("#Stroke_choice").val());
 
@@ -69,15 +57,9 @@ function buildTable() {
         // apply filters
         var filteredData = strokeData
 
-        // if (idFilter) {
-        //     filteredData = filteredData.filter(row => parseInt(row.id) === (idFilter));
-        //     }        
         if (genderFilter) {
             filteredData = filteredData.filter(row => (row.gender) === (genderFilter));
             }
-        if (agerangeFilter) {
-            filteredData = filteredData.filter(row => (row.Age_Ranges) === (agerangeFilter))
-            } 
         if (hypertensionFilter) {
             filteredData = filteredData.filter(row => (row.hypertension) === (hypertensionFilter));
             } 
@@ -92,12 +74,6 @@ function buildTable() {
             } 
         if (residenceFilter) {
             filteredData = filteredData.filter(row => (row.Residence_type) === (residenceFilter));
-            } 
-        if (avgglucoseFilter) {
-            filteredData = filteredData.filter(row => (row.Avg_Glucose_Range) === (avgglucoseFilter))
-            } 
-        if (bmiFilter) {
-            filteredData = filteredData.filter(row => (row.BMI_Category) === (bmiFilter));
             } 
         if (smokingFilter) {
             filteredData = filteredData.filter(row => (row.smoking_status) === (smokingFilter));
@@ -120,7 +96,7 @@ function buildTableString(strokeData) {
     //destroy datatable
     $("table").DataTable().clear().destroy();
 
-    var datarows = strokeData.map(x => [x["id"], x["gender"], x["age"], x["Age_Ranges"],  x["hypertension"], x["heart_disease"], x["ever_married"] ,x["work_type"],x["Residence_type"],x ["avg_glucose_level"],x["Avg_Glucose_Range"],x["BMI_Category"],x["bmi"],x["smoking_status"],x["stroke"]])
+    var datarows = strokeData.map(x => [x["id"], x["gender"], x["age"], x["hypertension"], x["heart_disease"], x["ever_married"] ,x["work_type"],x["Residence_type"],x ["avg_glucose_level"],x["bmi"],x["smoking_status"],x["stroke"]])
 
     //redraw
     $("#table").DataTable({
