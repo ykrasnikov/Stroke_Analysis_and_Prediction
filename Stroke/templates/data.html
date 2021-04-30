@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Data</title>
+
+    <!-- Bootstrap and Bootswatch CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <!--<link rel="stylesheet" href="assets/css/d3Style.css">-->
+
+<!-- <link rel="stylesheet"  href="style.css">-->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script> -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+    <script type="text/javascript" src="/static/js/app3.js"></script>
+
+    <!--FROM SAM-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.bootstrap4.min.css">
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <!-- Buttons -->
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">
+            <img src="../static/images/dallas_logo.jpeg" alt="logo" style="width:40px;height:40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">Visualizations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/ml">Status Predictor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/exploration">Crime Analysis</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/data">Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/resources">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <div class="row text-center" style="margin-top:3%">
+        <div class = "col-md-12">
+            <h6 class="display-4">Stroke Analysis Data</h6>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row margin-top-50">
+            <div class="col-md-3">
+            <!--FILTERS-->
+                <div class="card border-primary mb-3">
+                    <div class="card-header">Filters</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="stroke">Stroke Filter</label>
+                                    <select id="Stroke_choice">
+                                        <option value="" disabled selected>1-Yes 0-No</option>
+                                        <option value="1">1-Yes</option>
+                                        <option value="0">0-No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="gender">Gender</label>
+                                    <select id="gender_choice">
+                                        <option value="" disabled selected>Gender</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Male">Male</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="id">id</label>
+                                    <select id="id_choice">
+                                        <option value="" disabled selected>id</option>
+                                        <option value="id">id</option>
+                                        <option value="Male">Male</option>
+                                    </select>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="Age_Ranges">Age Range</label>
+                                    <select id="Age_Range_Choice">
+                                        <option value="" disabled selected>Age Range</option>
+                                        <option value="0 to 49">0 to 49</option>
+                                        <option value="50 to 59">50 to 59</option>
+                                        <option value="60 to 69">60 to 69</option>
+                                        <option value="70 to 79">70 to 79</option>
+                                        <option value="80+">80+</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="BMI_Category">BMI Category</label>
+                                    <select id="BMI_Category_Choice">
+                                        <option value="" disabled selected>BMI Category</option>
+                                        <option value="Underweight">Underweight</option>
+                                        <option value="Target BMI">Target BMI</option>
+                                        <option value="Overweight">Overweight</option>
+                                        <option value="Obese">Obese</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="Avg_Glucose_Range">Avg Glucose Range</label>
+                                    <select id="avg_glucose_choice">
+                                        <option value="" disabled selected>Avg Glucose</option>
+                                        <option value="Hypoglycemic">Hypoglycemic</option>
+                                        <option value="Target Avg Glucose">Target Avg Glucose</option>
+                                        <option value="Diabetic Risk">Diabetic Risk</option>
+                                        <option value="Diabetic">Diabetic</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="hypertension">Hypertension</label>
+                                    <select id="hypertension_choice">
+                                        <option value="" disabled selected>1-Yes 0-No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="heart_disease">Heart Disease</label>
+                                    <select id="heart_disease_choice">
+                                        <option value="" disabled selected>1-Yes 0-No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="ever_married">Ever Married</label>
+                                    <select id="ever_married_choice">
+                                        <option value="" disabled selected>Ever Married</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="smoking_status">Smoking Status</label>
+                                    <select id="smoking_status_choice">
+                                        <option value="" disabled selected>Smoking Status</option>
+                                        <option value="smokes">Currently Smokes</option>
+                                        <option value="formerly smoked">Formerly Smoked</option>
+                                        <option value="never smoked">Never Smoked</option>
+                                        <option value="Unknown">Unknown</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="work_type">Work Type</label>
+                                    <select id="work_type_choice">
+                                        <option value="" disabled selected>Work Type</option>
+                                        <option value="Private">Private</option>
+                                        <option value="Self-employed">Self Employed</option>
+                                        <option value="Govt_job">Government Job</option>
+                                        <option value="children">Children</option>
+                                        <option value="Never_worked">Never Worked</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="Residence_type">Residence Type</label>
+                                    <select id="residence_type_choice">
+                                        <option value="" disabled selected>Residence Type</option>
+                                        <option value="Urban">Urban</option>
+                                        <option value="Rural">Rural</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group-sm">
+                            <button id="filter-btn" type="button" class="btn btn-primary">Filter Table</button>
+                            <button id="filter-clear" type="button" class="btn btn-success">Clear Filters</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--DATA TABLE--> 
+            <div class="col-md-9">
+                <div id="table-area" class="">
+                    <table id="table" class="table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th class="table-head">id</th>
+                                <th class="table-head">gender</th>                                
+                                <th class="table-head">age</th>
+                                <th class="table-head">Age_Ranges</th>
+                                <th class="table-head">hypertension</th>
+                                <th class="table-head">heart_disease</th>
+                                <th class="table-head">ever_married</th>
+                                <th class="table-head">work_type</th>
+                                <th class="table-head">Residence_type</th>
+                                <th class="table-head">avg_glucose_level</th>
+                                <th class="table-head">Avg_Glucose_Range</th>
+                                <th class="table-head">BMI_Category</th>
+                                <th class="table-head">bmi</th>
+                                <th class="table-head">smoking_status</th>
+                                <th class="table-head">stroke</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+</div>
+</body>
+
+</html>
