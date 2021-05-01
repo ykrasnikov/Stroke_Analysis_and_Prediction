@@ -26,25 +26,41 @@ def home():
     # Return template and data
     return render_template("index.html")
 
+@app.route("/nav")
+def nav():
+    # Return template and data
+    return render_template("navbar_template.html")
+
+@app.route("/head")
+def head():
+    # Return template and data
+    return render_template("head_template.html")
+
+
 @app.route("/ml")
 def model_page():
     # Return template and data
     return render_template("ml.html")
 
-@app.route("/dashboard")
-def dashboard():
+@app.route("/vizz_mortality")
+def dashboard1():
     # Return template and data
-    return render_template("dashboard.html")
+    return render_template("MortalityRateVizz.html")
 
-@app.route("/dashboardmap")
-def map():
+@app.route("/vizz_risk")
+def dashboard2():
     # Return template and data
-    return render_template("map.html")
+    return render_template("StrokeRiskVizz.html")
+
+@app.route("/vizz_explore")
+def dashboard3():
+    # Return template and data
+    return render_template("DataExploreVIZZ.html")
 
 @app.route("/data")
 def data():
     # Return template and data
-    return render_template("data.html")
+    return render_template("Data.html")
 
 @app.route("/exploration")
 def exploration():
@@ -56,14 +72,17 @@ def resources():
     # Return template and data
     return render_template("resources.html")
 
-@app.route("/about")
+@app.route("/team")
 def about_us():
     # Return template and data
-    return render_template("about.html")
+    return render_template("team.html")
 
 @app.route("/makePredictions", methods=["POST"])
 def makePredictions():
     content = request.json["data"]
+
+
+
 
     # parse
     sex_label = int(content["sex_label"])
