@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Stoke Exploration & Analysis</title>
+
+  <!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+crossorigin="anonymous"></script>
+<!-- load header -->
+<script>  $(function () {$('#header').load('head')})</script>
+<div id=header></div>
+
+</head>
+
+<body>
+  <!--Navbar-->
+  <!-- load navbar -->
+  <script> $(function () {$('#mybar').load('nav')})</script>
+  <div id=mybar></div>
+
+  <div class="row text-center" style="margin-top:5%">
+    <div class = "col-md-12">
+        <h6 class="display-4">Stroke Exploration & Analysis</h6>
+    </div>
+  </div>
+
+  <!--METHOD-->
+  <div class= "container-fluid">
+    <div class="row" style="margin-top:3%">
+      <div class = "col-md-12">
+          <blockquote class="blockquote text-center">
+              <p class="mb-0">We sourced our data from the Stroke Prediction Dataset on the <a href="https://www.kaggle.com/fedesoriano/stroke-prediction-dataset"><b> Kaggle </b></a> website.
+              </p>
+          </blockquote>
+          <br>
+      </div>
+    </div>
+    <!--DATA GATHERING-->
+    <div class="row">
+      <div class = "col-md-12">
+          <h3><b>Data Gathering</b></h3>
+          <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-md-12">
+          <blockquote class="blockquote">
+              <p class="mb-0">
+                <img src="../static/images/month_loop.png" alt = "Month Loop" style="float:left;width:35%;padding:2%;">
+                We chose to Stoke Prediction Datase as it was rich with information regarding the incidence of stroke and permitted us to develop a robust model that to predict it.
+              <br>
+              <br>We downloaded this data set as a .csv file to explore and clean for our data analysis and modeling.
+              </p>
+            </blockquote>
+      </div>
+    </div>
+    <!--DATA CLEANING-->
+    <div class="row" style="margin-top:5%">
+      <div class = "col-md-12">
+          <h3><b>Data Cleaning</b></h3>
+          <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-md-12">
+        <blockquote class="blockquote">
+            <p class="mb-0">
+              <img src="../static/images/lat_long.png" alt = "Month Loop" style="float:left;width:35%;padding:2%;">
+              Pulling all of the Police incidents recorded for 2020, provided us with a very large 
+              dataset so we started by cleaning the data.  We first cleaned the columns in which we 
+              were interested in separating the data within them.  For example, the API provided a 
+              geocoded column of the latitude and longitude for each incident and we wanted to separate 
+              those into their own columns for further analysis.
+            </p>
+        </blockquote>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class = "col-md-12">
+        <blockquote class="blockquote">
+            <p class="mb-0">
+              <img src="../static/images/column_clean.png" alt = "Month Loop" style="float:left;width:35%;padding:2%;">
+              We changed all columns of strings to columns of date times that provided us with date, day,
+                year, and time information.  We also cleaned the columns with discrepancies in reporting. 
+                For example, some districts reported had D in front of the district number while some only
+              reported the number.  We added the D in front of all districts to standardize.  We dropped
+                all zip codes that did not correspond to actual city of Dallas zip codes. The API provided 
+                zip codes within Dallas County as a whole and some that were incorrect due to input error; 
+                therefore, we removed those. We also dropped the status columns that were not significant 
+                such as “L”, “Returned for Correction,” and “Open” in addition to dropping all nulls 
+                provided for this column.
+            </p>
+        </blockquote>
+      </div>
+    </div>
+    <!--TABLEAU-->
+    <div class="row" style="margin-top:5%">
+      <div class = "col-md-12">
+          <h3><b>Data Manipulation for Tableau</b></h3>
+          <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-md-12">
+          <blockquote class="blockquote">
+            <img src="../static/images/tableau_subset.png" alt = "Month Loop" style="float:left;width:35%;padding:2%;">
+              <p class="mb-0">Based on all of the cleaning techniques we performed, we utilized a subset 
+                of this data of our Tableau visualizations.  After the aforementioned cleaning, our dataset
+                  was still larger than allowed for Tableau; therefore, we took a random subset of 0.6 of the 
+                  dataset to be used with Tableau.
+              </p>
+          </blockquote>
+      </div>
+    </div>
+    <!--FEATURE ENGINEERING-->
+    <div class="row" style="margin-top:5%">
+      <div class = "col-md-12">
+          <h3><b>Feature Engineering for Machine Learning Modeling</b></h3>
+          <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-md-12">
+        <blockquote class="blockquote">
+            <p class="mb-0">
+              <img src="../static/images/column_drop.png" alt = "Month Loop" style="float:left;width:35%;padding:2%;">
+              To prepare our dataset for machine learning modeling, we feature engineered columns.  
+              We dropped insignificant columns and insignificant categories within the nibrs_crime_category
+                column.  This column provides the kind of crime as reported by the NIBRS classification 
+                system that police units use.  We only used the columns that were coded to be classified 
+                within this classification system and took out all of those categories not listed here. 
+                These other values were an insignificant portion of the overall dataset at only 4% of the 
+                total data.
+            </p>
+        </blockquote>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class = "col-md-12">
+        <blockquote class="blockquote">
+            <p class="mb-0">
+              <img src="../static/images/dummy_columns.png" alt = "Month Loop" style="float:left;width:35%;padding:2%;">
+              After this, we label-encoded our target of status and the month column.  In addition, we 
+              dummified our string columns of “division,” “district,” “day1”, and  “nibrs_crime_category.”
+                We then analyzed our linear and tree-based correlations based on our features.  The label 
+                and one-hot encoding we performed on for features, provided a lot of additional categories 
+                so when we looked at our correlations, we took a subset of these correlating features to use 
+                for our machine learning model.  We saved the linear and tree-based correlations to their own 
+                data sets that we ran through our machine learning model.
+            </p>
+        </blockquote>
+      </div>
+    </div>
+    <!--CORRELATIONS-->
+    <div class="row" style="margin-top:5%">
+      <div class = "col-md-12">
+          <h3><b>Correlations</b></h3>
+          <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-md-12">
+        <blockquote class="blockquote">
+            <p class="mb-0">
+              <img src="../static/images/correlation_heatmap.png" alt = "Month Loop" style="float:left;width:35%;padding:2%;">
+              The label and one-hot encoding we performed on for features, provided a lot of additional columns for our dataset 
+              so investigated our correlations.  We took a subset of the correlations with the largest correlating factors as 
+              displayed in the Correlation Heatmap.  We removed the feature categories with low correlations, leaving us with 
+              the categories of: Watch, Hour, Division, District, Month, Day, Crime Category, Hour, and Latitude, which are the finalized
+              feature categories that we ran through our Machine Learning Model.
+            </p>
+        </blockquote>
+      </div>
+    </div>
+    <br>
+    <!--MACHINE LEARNING-->
+    <div class="row" style="margin-top:5%">
+      <div class = "col-md-12">
+          <h3><b>Machine Learning</b></h3>
+          <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-lg-12">
+          <blockquote class="blockquote">
+              <p class="mb-0">We ran our data using the classification models, but we saw that our model 
+                was overfitting the data.  The model was overlooking our second class of target status of 
+                “Closed/Cleared.”  To counter this, we decided to use two machine learning models.  The 
+                first model determines the probability of whether or not our target status ended in suspended
+                  or not suspended. Our second model then took the not suspended incidents to predict the 
+                  probability that the incident either ended in arrest or ended in the incident being closed or 
+                  cleared.
+              </p>
+          </blockquote>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class = "col-md-6">
+        <h5>Model 1: XG Boost Classifier</h5>
+          <blockquote class="blockquote">
+              <p class="mb-0">
+                The X-treme Gradient Boost Classifier was the model that we chose to 
+                predict the probability of our data for Model 1.  It did not overfit the data and 
+                it had the highest accuracy, F-1 and AUC scores. 
+              </p>
+          </blockquote>
+      </div>
+      <div class = "col-md-6">
+        <h5>Model 2: XG Boost Classifier</h5>
+          <blockquote class="blockquote">
+              <p class="mb-0">We also chose to use The X-treme Gradient Boost Classifier to predict the 
+                probability of Model 2.  It did not overfit the data and it had the highest accuracy, 
+                F-1 and AUC scores.
+              </p>
+          </blockquote>
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-md-6">
+        <img src="../static/images/model_1.png" alt="Alex" style="width:65%;padding:2%;" class="center">
+      </div>
+      <div class = "col-lg-6">
+        <img src="../static/images/model_2.png" alt="Alex" style="width:65%;padding:2%;" class="center">
+      </div>
+    </div>
+    <!--Feature Importances-->
+    <div class="row" style="margin-top:5%">
+      <div class = "col-md-12">
+          <h3><b>Feature Importances</b></h3>
+          <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-lg-12">
+          <blockquote class="blockquote">
+              <p class="mb-0">We also investigated the feature importances of each of these models to determine what, if any features played a greater role in predicting status outcomes.
+              </p>
+          </blockquote>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class = "col-md-6">
+        <h5>Model 1</h5>
+          <blockquote class="blockquote">
+              <p class="mb-0">
+                The feature importances of Model 1 when determining whether or not an incident ends in suspension is heavily influenced by various crime categories overall.
+              </p>
+          </blockquote>
+      </div>
+      <div class = "col-md-6">
+        <h5>Model 2</h5>
+          <blockquote class="blockquote">
+              <p class="mb-0">The feature importances of Models 2, in which we determine whether an incident ends in an arrest or a clearance, is heavily weighted by the Crime Category: Miscellaneous at approximately 78%. Therefore, we have excluded that category to show the other contributing factors and their weights respectively.
+              </p>
+          </blockquote>
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-md-6">
+        <img src="../static/images/feature_importances1.png" alt="Alex" style="width:65%;padding:2%;" class="center">
+      </div>
+      <div class = "col-lg-6">
+        <img src="../static/images/feature_importances2.png" alt="Alex" style="width:65%;padding:2%;" class="center">
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
