@@ -6,6 +6,10 @@
 <!-- load header -->
 <script>  $(function () {$('#header').load('/head')})</script>
 <div id=header></div>
+
+<!-- JS -->
+<script type="text/javascript" src="static/js/logic.js"></script>
+
 <!-- body -->
 <body>
   <!-- load navbar -->
@@ -239,6 +243,13 @@
               <div class="col-md-12">
                   <button type="button" class="btn btn-primary" id="filter">Make Prediction!</button>
               </div>
+              <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 id="output"></h1>
+                    </div>
+                </div>
+            </div>
           </div>
           </form>
         </div>
