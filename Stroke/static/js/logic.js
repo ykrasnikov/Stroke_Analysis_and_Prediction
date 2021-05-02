@@ -50,13 +50,13 @@ function makePredictions() {
             console.log(returnedData);
 
             if (returnedData["prediction"] <= .25) {
-                $("#output").text("Very Unlikely");
+                $("#output").text("Very Unlikely "+Math.round((returnedData["prediction"])*1000)/10+"%");
             } else if (returnedData["prediction"] <= .5) {
-                $("#output").text("Unlikely");
+                $("#output").text("Unlikely "+Math.round((returnedData["prediction"])*1000)/10+"%");
             } else if (returnedData["prediction"] <=.75) {
-                $("#output").text("Likely");
+                $("#output").text("Likely "+Math.round((returnedData["prediction"])*1000)/10+"%");
             }else {
-                $("#output").text("Very likely!");
+                $("#output").text("Very likely! "+Math.round((returnedData["prediction"])*1000)/10+"%");
             }
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
