@@ -187,7 +187,7 @@
         <br>                    
       </p>
       <p class="lead">
-        We sought and found a tool (SMOTE - Synthetic Minority Over-sampling Technique) to help with our in-balanced stroke class. <br>                    
+        We sought and found a tool (SMOTE - Synthetic Minority Over-sampling Technique) to help with our im-balanced stroke class. <br>                    
         <br>                    
     </div>
   </div>
@@ -207,52 +207,80 @@
               </figcaption>
             </figure>
       <a>
-        <h3 class="display-5">Stroke after SMOTE - A Balanced Class</h3>
+        <h3 class="display-5">Stroke after SMOTE - A Balanced Class - How does it do it? </h3>
       <p class="lead"> 
-        After we established features and began running models, we observed numerous warning regarding lack of data and noticed our predictions were over reporting non-stroke and under reporting stroke.
+        SMOTE selects samples in the minority class that are close and then draws lines between them. New sample points are located on these lines.
         <br>
       </p>
       <p class="lead">
-        We determined stroke occurance was being overwelmed in the analysis by non-stroke. <br>                     
+        To be more precise, a random sample is chosen, and then a KNN algorithm is used to select neighbors to which lines are drawn. With this procedure, you can create as many synthetic samples as needed. This makes SMOTE perfect for datasets of all sizes. <br>                     
         <br>                    
       </p>
       <p class="lead">
-        We sought and found a tool (SMOTE - Synthetic Minority Over-sampling Technique) to help with our in-balanced stroke class. <br>                    
+        The only real downside is that synthetic examples are created without “consulting” the majority class. This could result in overlapping samples in both classes. <br>                    
         <br>                    
+      </p>
     </div>
   </div>
 </div>
 
-<!-- JUMBOTRON 2 Mortality rate  -->
-      <div class="jumbotron">
-        <h1 class="display-5">Stroke Mortality Rate</h1>
-        <hr class="my-4">
-          <a  href="vizz_mortality">
-              <figure class="fig1_p1">
-                <img src="../static/images/stroke_mortality.jpg" class="rounded img_p1 " alt="Stroke mortality dashboard">
-                <figcaption>
-                Stroke mortality rate dashboard
-                </figcaption>
-              </figure>
-        <a>
-          <p class="lead">
-            3 years averaged (2015-2017) Stroke Mortality Rate per 100,000 people mapped by each State.
-          </p>
-            <ul class="lead" >
-              <li>Averaged USA mortality rate is around 75. </li>
-              <li>South East region is above average with Alabama leading at 100 death rate.</li>
-              <li>Clear corelation with median household income for South East region.</li>
-              <li>Black Stroke rate is significantly higher then overall , hispanic and asian is lower then overall.</li>
-              <li>Male rate is slighlty higher then female.</li>
-            </ul>   
-            <br> 
-        <hr class="my-4">
-        <p class="lead">
-          <a class="btn btn-primary btn-lg"
-            href="https://public.tableau.com/profile/yakov.krasnikov#!/vizhome/2016Strokedeathrate/Dashboard4?publish=yes"
-            target="_blank" role="button">Learn more</a>
-        </p>
-      </div>
+<!-- JUMBOTRON 7 Stroke - Machine Learning Models  -->
+<div class="row justify-content-center">
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+    <div class="jumbotron">
+      <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/machine learning/ML_Models.JPG" target="_blank">
+            <figure class="fig1_p1">
+              <img src="../static/images/machine learning/ML_Models.JPG" class="rounded img_p1" alt="ML Models" target="_blank" > 
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h3 class="display-5">Machine Learning Models Tested</h3>
+      <p class="lead"> 
+        In seeking to obtain an optimal stroke prediction, we ran 8 Machine learning models.
+        <br>
+      </p>
+      <p class="lead">
+        Three were linear and five were tree models. <br>                     
+        <br>                    
+      </p>
+      
+    </div>
+  </div>
+</div>
+
+<!-- JUMBOTRON 8 Stroke - Selecting our Machine Learning Model of Choice  -->
+<div class="row justify-content-center">
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+    <div class="jumbotron">
+      <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/machine learning/model_selection.PNG" target="_blank">
+            <figure class="fig1_p1">
+              <img src="../static/images/machine learning/model_selection.PNG" class="rounded img_p1" alt="Model of Choice" target="_blank" > 
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h3 class="display-5">Machine Learning Model Selected</h3>
+      <p class="lead"> 
+        We compared f1-score and Recall for stoke outcomes Identified the top 3 models for consideration. 
+        <br>
+      </p>
+      <p class="lead">
+        The Logistics Regression model, having a far superior Recall score for stroke, was selected. <br>                     
+        <br>                    
+      </p>
+      
+    </div>
+  </div>
+</div>
 
 </body>
 
