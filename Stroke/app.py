@@ -37,10 +37,10 @@ def head():
     return render_template("head_template.html")
 
 
-@app.route("/ml")
-def model_page():
+@app.route("/mortality_analysis")
+def mortality_analysis():
     # Return template and data
-    return render_template("ml.html")
+    return render_template("AnalysisMortalityRate.html")
 
 @app.route("/vizz_mortality")
 def dashboard1():
