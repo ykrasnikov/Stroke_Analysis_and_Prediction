@@ -1,372 +1,210 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <title>Stroke Exploration & Analysis</title>
-
-  <!-- Jquery -->
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-crossorigin="anonymous"></script>
+<!doctype html>
+<html>
+<!-- Jquery -->
+<script src=  "https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
 <!-- load header -->
-<script>  $(function () {$('#header').load('head')})</script>
+<script>  $(function () {$('#header').load('/head')})</script>
 <div id=header></div>
 
-</head>
-
+<!-- body -->
 <body>
-  <!--Navbar-->
   <!-- load navbar -->
-  <script> $(function () {$('#mybar').load('nav')})</script>
+  <script> $(function () {$('#mybar').load('/nav')})</script>
   <div id=mybar></div>
 
-  <div class="row text-center" style="margin-top:5%">
-    <div class = "col-md-12">
-        <h6 class="display-4">Stroke Exploration & Analysis</h6>
+
+  <!-- JUMBOTRONs ROW  -->
+<!-- JUMBOTRON 1 Data Gather  -->
+  <div class="row justify-content-center">
+    <!-- 2.1column                                                                   2.1column -->
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <h1 class="display-5">Stoke Exploration and analysis</h1>
+        <hr class="my-4">
+        
+            <a  href="../static/images/machine learning/data_gathering.JPG" target="_blank">
+              <figure class="fig1_p1">
+                <img src="../static/images/machine learning/data_gathering.JPG" class="rounded img_p1 " alt="Data Gathering" target="_blank">
+                <figcaption>
+                </figcaption>
+              </figure>
+        <a>
+          <h3 class="display-5">Sourcing and Data Gathering</h3>
+        <p class="lead"> 
+          We sourced our data from the Stroke Prediction Dataset on the <a href="https://www.kaggle.com/fedesoriano/stroke-prediction-dataset" target="_blank"><b> Kaggle </b></a> website.
+          <br>The dataset was downloaded as a .csv file to explore and clean for data analysis and modeling.
+        </p>
+        <p class="lead">
+          We chose to "Stoke Prediction Database" as it was rich with information regarding the incidence of stroke and permitted us to develop a robust model would attempt to predict it.
+            <br>              
+        </p>
+      </div>
+
+<!-- JUMBOTRON 2 Data Cleaning  -->
+<div class="row justify-content-center">
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+    <div class="jumbotron">
+      <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/machine learning/Data_Cleanup_Basic.JPG" target="_blank">
+            <figure class="fig1_p1">
+              <img src="../static/images/machine learning/Data_Cleanup_Basic.JPG" class="rounded img_p1 " alt="Data Gathering" target="_blank">
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h3 class="display-5">Initial Data Cleanup</h3>
+      <p class="lead"> 
+        “Other” gender category, considered non-impactful, was dropped from the dataset, resulting in removing 1 row of data.
+        <br>
+      </p>
+      <p class="lead">
+        In reviewing the raw data, the bmi attribute was identified as having 201 “N/A” values.  This represents 3.9% of the dataset.  The mean bmi value of 28.89 was used to impute the “N/A” values. 
+          <br>              
+      </p>
+      <p class="lead">
+        Gender, Marriage Status, and Residence were set up as Lables (1/0 for yes / no and rural / urban ). 
+          <br>              
+      </p>
     </div>
+<!-- JUMBOTRON 3 Data Cleaning - One Hot  -->
+<div class="row justify-content-center">
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+    <div class="jumbotron">
+      <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/machine learning/Data_Cleanup_One_Hot.JPG" target="_blank">
+            <figure class="fig1_p1">
+              <img src="../static/images/machine learning/Data_Cleanup_One_Hot.JPG" class="rounded img_p1 " alt="Data Gathering" target="_blank">
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h3 class="display-5">One Hot - Data Cleanup</h3>
+      <p class="lead"> 
+        One Hot endcoding was use to split out Work_Type (5 types) and Smoking_Status (4 types) features.
+        <br>
+      </p>
+      <p class="lead">
+        There are 1,544 members of our dataset with "Unknown" as there smoking status. We researched medical literature in other studies where smoking status was "Unknown". We found the unknown was treated as at data category and that attempt to imput it tended to bias study outcomes. We chose to leave it as a data category (feature).
+          <br>                    
+    </div>
+    <!-- JUMBOTRON 4 Data Cleaning - Flask Processing  -->
+<div class="row justify-content-center">
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+    <div class="jumbotron">
+      <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/machine learning/Data_Cleanup_Flask.JPG" target="_blank">
+            <figure class="fig1_p1">
+              <img src="../static/images/machine learning/Data_Cleanup_Flask.JPG" class="rounded img_p1 " alt="Data Gathering" target="_blank">
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h3 class="display-5">Flask Processing - Data Cleanup</h3>
+      <p class="lead"> 
+        We found fields with dashes and spaces that were causing our Flask processing to error out. 
+        <br>
+      </p>
+      <p class="lead">
+        Three field names were updated:   <br>                    
+        Dash to underscore and lower case in "work_type_Self-employed"   <br>
+        Space to underscore in "smoking_status_formerly smoked"   <br>
+        Space to underscore in "smoking_status_never smoked"   <br>
+          <br>                    
+    </div>
+
+
+<!-- JUMBOTRON 2 Mortality rate  -->
+      <div class="jumbotron">
+        <h1 class="display-5">Stroke Mortality Rate</h1>
+        <hr class="my-4">
+          <a  href="vizz_mortality">
+              <figure class="fig1_p1">
+                <img src="../static/images/stroke_mortality.jpg" class="rounded img_p1 " alt="Stroke mortality dashboard">
+                <figcaption>
+                Stroke mortality rate dashboard
+                </figcaption>
+              </figure>
+        <a>
+          <p class="lead">
+            3 years averaged (2015-2017) Stroke Mortality Rate per 100,000 people mapped by each State.
+          </p>
+            <ul class="lead" >
+              <li>Averaged USA mortality rate is around 75. </li>
+              <li>South East region is above average with Alabama leading at 100 death rate.</li>
+              <li>Clear corelation with median household income for South East region.</li>
+              <li>Black Stroke rate is significantly higher then overall , hispanic and asian is lower then overall.</li>
+              <li>Male rate is slighlty higher then female.</li>
+            </ul>   
+            <br> 
+        <hr class="my-4">
+        <p class="lead">
+          <a class="btn btn-primary btn-lg"
+            href="https://public.tableau.com/profile/yakov.krasnikov#!/vizhome/2016Strokedeathrate/Dashboard4?publish=yes"
+            target="_blank" role="button">Learn more</a>
+        </p>
+      </div>
+<!-- JUMBOTRON 2 Mortality rate  -->
+      <div class="jumbotron">
+        <h1 class="display-5">Leading Causes of Stroke</h1>
+        <hr class="my-4">
+        <p class="lead">Age increases your chances for stroke. The older you are, the more likely you are to have a stroke. Unfortunately Anyone can have a stroke at any age. Certain things can increase your chances of having a stroke.  </p>
+        <h3 class="display-5">Conditions</h1>
+        <p class="lead">Common medical conditions that increase chances of having stroke are Previous stroke, High Blood Pressure, Heart disease, 
+          Diabetes.
+        </p>
+        <h3 class="display-5">Behavior</h1>
+          <p class="lead">Common lifestyle choices that increase chances of having stroke are 
+            Obesity, too much Alcohol , Tobaco Use.
+          </p>
+        <hr class="my-4">
+
+        <script
+          type='text/javascript'>                    var divElement = document.getElementById('viz1619561152066'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1527px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+        <br>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg"
+            href="https://public.tableau.com/profile/yakov.krasnikov#!/vizhome/2016Strokedeathrate/Dashboard4?publish=yes"
+            target="_blank" role="button">Learn more</a>
+        </p>
+      </div>
+
+      <div class="jumbotron">
+        <h1 class="display-5">Data Set Exploratory & Model Building</h1>
+        <p class="lead">Dashboard analyzing averaged mortality rate from stroke in each state in the light of social
+          factors such as poverty, gender and ethnicity. </p>
+        <hr class="my-4">
+
+        <script
+          type='text/javascript'>                    var divElement = document.getElementById('viz1619561152066'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1527px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+        <br>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg"
+            href="https://public.tableau.com/profile/yakov.krasnikov#!/vizhome/2016Strokedeathrate/Dashboard4?publish=yes"
+            target="_blank" role="button">Learn more</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
   </div>
 
-  <!--METHOD-->
-  <div class= "container-fluid">
-    <div class="row" style="margin-top:3%">
-      <div class = "col-md-12">
-          <blockquote class="blockquote text-center">
-              <p class="mb-0">We sourced our data from the Stroke Prediction Dataset on the <a href="https://www.kaggle.com/fedesoriano/stroke-prediction-dataset"><b> Kaggle </b></a> website.
-              </p>
-          </blockquote>
-          <br>
-      </div>
-    </div>
-
-    <!--DATA GATHERING and REVIEW-->
-    <div class="row">
-      <div class = "col-md-12">
-          <h3><b>Data Gathering</b></h3>
-          <br>
-      </div>
-    </div>
-    <div class="row">
-      <div class = "col-md-12">
-          <blockquote class="blockquote">
-              <p class="mb-0">
-                <img src="../static/images/data review/attributes.PNG" alt = "attributes" style="float:left;width:35%;padding:2%;">
-              <br>
-              We chose to Stoke Prediction Datase as it was rich with information regarding the incidence of stroke and permitted us to develop a robust model that to predict it.
-              <br>
-              <br>The dataset was downloaded as a .csv file to explore and clean for data analysis and modeling.
-              </p>
-            </blockquote>
-      </div>
-    </div>
-
-    <!--DATA CLEANING and PREP-->
-    <div class="row" style="margin-top:5%">
-      <div class = "col-md-12">
-          <h3><b>Data Cleaning</b></h3>
-          <br>
-      </div>
-    </div>
-    <div class="row">
-      <div class = "col-md-12">
-        <blockquote class="blockquote">
-            <p class="mb-0">
-              <img src="../static/images/data review/age_corr.PNG" alt = "age stroke corr" style="float:left;width:35%;padding:2%;">
-              <br>
-              <br>
-              Data cleaning was conducted in Jupyter Notebook using Python. 
-              The raw dataset for machine learning consists of 5110 unique rows of information.  
-              There were 2,994 (58.60%) “Females”, 2,115 (41.40%) “Males” and 1 “Other” in the gender attribute.  
-              The “Other” gender was dropped from the dataset for a resulting dataset of 5,109 unique rows.  A quick
-              review of the data indicated that 92% of the strokes in the dataset occurred in individuals over the 
-              age of 50 
-            </p>
-        </blockquote>
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class = "col-md-12">
-        <blockquote class="blockquote">
-            <p class="mb-0">
-              <img src="../static/images/machine learning data prep/one_hot_encoding.PNG" alt = "one hot" style="float:left;width:35%;padding:2%;">
-              <br>
-              In reviewing the raw data, the bmi attribute was identified as having 201 “N/A” values.  This 
-              represents 3.9% of the dataset.  The mean bmi value of 28.89 was used as the replacement value for 
-              the “N/A” values. As noted above in the representation data tables, the raw dataset has a total 1,544 
-              “Unknown” smoking status values representing 30.4% of the dataset.  A closer look at the data showed 
-              32% of the “Unknown” values were between the ages of 0-10 and 41% was between the ages of 0-15.   The 
-              Centers for Disease Control and Prevention (CDC) defines a current smoker as an Adult who has previously 
-              smoked 100 cigarettes in their lifetime and who currently smokes.   Research of online literature to address 
-              this issue of “Unknown” labels was conducted and it was found that “Unknown” is an accepted category.   The 
-              final decision was to leave the “Unknown” smoker status values as presented in the raw dataset.   
-              One-Hot Encoding was used for categorical data work_type, and smoking_status to be used in the linear 
-              and tree models. One-Hot Encoding was used for categorical data work_type and smoking_status to be used 
-              in the linear and tree models.               
-            </p>
-            <br>
-        </blockquote>
-      </div>
-    </div>
-    <div class="row">
-      <div class = "col-md-12">
-        <blockquote class="blockquote">
-            <p class="mb-0">
-              <img src="../static/images/machine learning data prep/stroke.PNG" alt = "stroke hist" style="float:left;width:35%;padding:2%;">
-              <br>
-              <br>
-              Most of the data was biased in the histograms, except for age and Residence_type. For the Yes/No questions, 
-              the data was left biased correlating to 0 which presents No as the answer to the respective question.   BMI 
-              and average_glucose was left biased representing the lower end of their broad spectrum of data points. Example 
-              histogram for stroke.
-            </p>
-        </blockquote>
-      </div>
-    </div>
-    <br>
-
-    <div class="row">
-      <div class = "col-md-12">
-        <blockquote class="blockquote">
-            <p class="mb-0">
-              There is a large imbalance of stroke incidents in the dataset.  To improve the model learning capabilities, 
-              bias was addressed using SMOTE.
-            </p>
-        </blockquote>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class = "col-md-6">
-          <blockquote class="blockquote">
-              <p class="mb-0" class="center">
-                Pre-Smote
-              </p>
-          </blockquote>
-      </div>
-      <div class = "col-md-6">
-          <blockquote class="blockquote">
-              <p class="mb-0" class="center">
-                Post-Smote
-              </p>
-          </blockquote>
-      </div>
-    </div>
-    <div class="row">
-      <div class = "col-md-6">
-        <img src="../static/images/machine learning data prep/stroke_pre_synth.PNG" alt="pre smote" style="width:65%;padding:2%;" class="center">
-      </div>
-      <div class = "col-lg-6">
-        <img src="../static/images/machine learning data prep/stroke_post_synth.PNG" alt="post smote" style="width:65%;padding:2%;" class="center">
-      </div>
-    </div>
-
-    <!--CORRELATIONS-->
-    <div class="row" style="margin-top:5%">
-      <div class = "col-md-12">
-          <h3><b>Correlations</b></h3>
-          <br>
-      </div>
-    </div>
-    <div class="row">
-      <div class = "col-md-12">
-        <blockquote class="blockquote">
-            <p class="mb-0">
-              <img src="../static/images/machine learning data prep/correlation_heat_map.PNG" alt = "heat map" style="float:left;width:35%;padding:2%;">
-              Correlation heatmap 
-            </p>
-        </blockquote>
-      </div>
-    </div>
-    <br>
-
-    <!--MACHINE LEARNING-->
-    <div class="row" style="margin-top:5%">
-      <div class = "col-md-12">
-          <h3><b>Machine Learning</b></h3>
-          <br>
-      </div>
-    </div>
-    <div class="row">
-      <div class = "col-lg-12">
-          <blockquote class="blockquote">
-              <p class="mb-0">The primary objective of the evaluation process was to identify a model
-                that did not over fit the data, generated the highest f1-score for 1 (Yes for stroke) 
-                model and generated the highest recall for 1.  The large number of 0 values (No for stroke), 
-                ensured a good f1-score for 0, but our objective was to identify a model that will give 
-                the best 1 results and that presented a challenge for the models.</p>
-                <p>
-                <br>
-                Linear models were evaluated first.
-              </p>
-                Models evaluated were LogisticRegression, KNeighborsClassifier and Support Vector Machines (svm).  
-                The class_weight = “balanced” was set for LogisticRegression and svm.  The n-neighbors = 20 was set 
-                for KNeighborsClassifier.
-              </p>
-              <p>The best results for the linear models was LogisticRegression with an Out Sample f1-score of 
-                0.23.  KNeighborsClassifier and svm gave 0.16 and 0.19, respectively.
-              </p>
-              <p>
-                Tree models were next.
-              </p>
-              Models evaluated were DecisionTreeClassifier, RandomForestClassifier, AdaBoostClassifier, 
-              GradientBoostingClassifier and XGBClassifier.  The random_state = 42 was set for each tree model.  
-              The n_estimators = 1000 was set for RandomForestClassifier, AdaBoostClassifier and GradientBoostingClassifier.  
-              The use_label_encoder = False was set for XGBClassifier.   
-              </p>
-              <p>The best results for the tree models were AdaBoostClassifier and GradientBoostingClassifier with 
-                Out Sample f1-scores of 0.24 and 0.26, respectively.  DecisionTreeClassifier, RandomForestClassifier 
-                and XGBClassifier gave 0.13, 0.16 and 0.14, respectively.  Upon further evaluation, AdaBoostClassifier 
-                and GradientBoostingClassifier gave recall values of 0.30 and 0.20.  In each case, the models had a 
-                high value of missed 1 (Yes for Stroke) in the Out Samples.
-              </p>
-          </blockquote>
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class = "col-md-4">
-        <h5>Best Linear Model: LogisticRegression</h5>
-          <blockquote class="blockquote">
-              <p class="mb-0">
-                LogisticRegression was chosen as the best 
-                Liner Model based on f1-score of 0.23 and 
-                recall of 0.80.
-              </p>
-          </blockquote>
-      </div>
-      <div class = "col-md-4">
-        <h5>Best Tree Model 1: AdaBoostClassifier</h5>
-          <blockquote class="blockquote">
-              <p class="mb-0">AdaBoostClassifier was chosen as option 1 of the 
-                Tree models.  It gave a f1-score of 0.24 and a recall of 0.30. 
-              </p>
-          </blockquote>
-      </div>
-      <div class = "col-md-4">
-        <h5>Best Tree Model 2: GradientBoostingClassifier</h5>
-          <blockquote class="blockquote">
-              <p class="mb-0">GradientBoostingClassifier was chosen as option 
-                2 of the Tree models.  It gave a f1-score of 0.26 and a recall 
-                of 0.20.
-              </p>
-          </blockquote>
-      </div>
-    </div>
-    <div class="row">
-      <div class = "col-md-4">
-        <img src="../static/images/machine learning/eval_loregress.PNG" alt="logress" style="width:65%;padding:2%;" class="center">
-      </div>
-      <div class = "col-lg-4">
-        <img src="../static/images/machine learning/ada.PNG" alt="ada" style="width:65%;padding:2%;" class="center">
-      </div>
-      <div class = "col-lg-4">
-        <img src="../static/images/machine learning/gradientboost.PNG" alt="gradient" style="width:65%;padding:2%;" class="center">
-      </div>
-    </div>
-
-    <!-- MODEL SELECTION -->
-    <div class="row" style="margin-top:5%">
-      <div class = "col-md-12">
-          <h3><b>Model Selection</b></h3>
-          <br>
-      </div>
-    </div>
-    <div class="row">
-      <div class = "col-md-12">
-        <blockquote class="blockquote">
-            <p class="mb-0">
-              <img src="../static/images/machine learning/model_selection.PNG" alt = "model selection" style="float:left;width:35%;padding:2%;">
-              <br>
-              <br>
-              When reviewing the best of the respective Liner and Trees models, the Tree models had the best f1-scores, but extremely 
-              poor recall values.  Therefore, LogisticRegression was selected with a little lower f1-score, but much better recall value.
-            </p>
-        </blockquote>
-      </div>
-    </div>
-
-    <!-- FULL DATASET RUNMODEL SELECTION -->
-    <div class="row" style="margin-top:5%">
-      <div class = "col-md-12">
-          <h3><b>Model Run Full Dataset</b></h3>
-          <br>
-      </div>
-      </div>
-      <div class="row">
-        <div class = "col-md-12">
-          <blockquote class="blockquote">
-              <p class="mb-0">
-                <img src="../static/images/machine learning/loregress_final.PNG" alt = "final logress run" style="float:left;width:35%;padding:2%;">
-                <br>
-                <br>
-                After LogisticRegression was selected as the model to be used, it run with class_weight = balanced, max_iter = 1000
-                and random_state = 42.   
-              </p>
-          </blockquote>
-        </div>
-      </div>
-
-    <!--FEATURE IMPORTANCE-->
-    <div class="row" style="margin-top:5%">
-      <div class = "col-md-12">
-          <h3><b>Feature Importance</b></h3>
-          <br>
-      </div>
-    </div>
-    <div class="row">
-      <div class = "col-lg-12">
-          <blockquote class="blockquote">
-              <p class="mb-0">Feature importance in the model selected.
-              </p>
-          </blockquote>
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class = "col-md-12">
-        <img src="../static/images/machine learning data prep/Correlation Chart.PNG" alt="feature" style="width:65%;padding:2%;" class="center">
-      </div>
-    </div>
-
-    <!--LIVE MODEL TESTING-->
-    <div class="row" style="margin-top:5%">
-      <div class = "col-md-12">
-          <h3><b>Live Model Testing</b></h3>
-          <br>
-      </div>
-      </div>
-      <div class="row">
-        <div class = "col-md-12">
-          <blockquote class="blockquote">
-              <p class="mb-0">
-                <img src="../static/images/model testing/test2.PNG" alt = "live test1" style="float:left;width:35%;padding:2%;">
-                <br>
-                <br>
-                Testing of the model provides expected results as more comorbidities are added  
-              </p>
-          </blockquote>
-        </div>
-      </div>
-
-    <!--TABLEAU-->
-    <div class="row" style="margin-top:5%">
-      <div class = "col-md-12">
-          <h3><b>Data Manipulation for Tableau</b></h3>
-          <br>
-      </div>
-    </div>
-    <div class="row">
-      <div class = "col-md-12">
-          <blockquote class="blockquote">
-            <img src="../static/images/tableau_subset.png" alt = "Month Loop" style="float:left;width:35%;padding:2%;">
-              <p class="mb-0">Based on all of the cleaning techniques we performed, we utilized a subset 
-                of this data of our Tableau visualizations.  After the aforementioned cleaning, our dataset
-                  was still larger than allowed for Tableau; therefore, we took a random subset of 0.6 of the 
-                  dataset to be used with Tableau.
-              </p>
-          </blockquote>
-      </div>
-    </div>
   </div>
+  
+
+
 </body>
 
 </html>
+
+
+
