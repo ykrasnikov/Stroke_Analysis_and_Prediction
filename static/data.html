@@ -1,0 +1,208 @@
+<!doctype html>
+
+<html>
+<!-- head -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="../static/styles/bootstrap.css">
+<link rel="stylesheet" href="../static/styles/bootstrap.min.css">
+<link rel="stylesheet" href="../static/styles/styles.css">
+   <!-- DataTables -->
+<script src="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"></script>
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+
+<script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+<script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://bootswatch.com/_assets/js/custom.js"></script>
+
+<!-- D3 -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+<!-- DataTables -->
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+<!-- local JS -->
+<script type="text/javascript" src="/static/js/logic.js"></script>
+<!--  -->
+<script type="text/javascript" src="/static/js/app3.js"></script>
+</head>
+<title>Stroke Probability Prediction </title>
+<!-- head  -->
+<!-- Jquery -->
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script> -->
+<!-- load header -->
+<!-- <script>  $(function () {$('#header').load('/static/head_template.html')})</script>
+<div id=header></div> -->
+<!-- body -->
+<body>
+  <!-- load navbar -->
+  <script> $(function () {$('#mybar').load('/static/navbar_template.html')})</script>
+  <div id=mybar></div>
+
+<!-- JUMBOTRON 1 Template  -->
+<div class="row justify-content-center">
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-lg-11  col-md-12">
+    <div class="jumbotron">
+      <h1 class="display-5">Stroke Analysis Data</h1>
+      <hr class="my-4">
+                  <!--FILTERS-->
+                  <div class="card border-primary mb-3">
+                    <div class="card-header">Filters</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="stroke">Stroke Filter</label>
+                                    <select id="Stroke_choice">
+                                        <option value="" disabled selected>1-Yes 0-No</option>
+                                        <option value="1">1-Yes</option>
+                                        <option value="0">0-No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="gender">Gender</label>
+                                    <select id="gender_choice">
+                                        <option value="" disabled selected>Gender</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Male">Male</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="hypertension">Hypertension</label>
+                                    <select id="hypertension_choice">
+                                        <option value="" disabled selected>1-Yes 0-No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="heart_disease">Heart Disease</label>
+                                    <select id="heart_disease_choice">
+                                        <option value="" disabled selected>1-Yes 0-No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="ever_married">Ever Married</label>
+                                    <select id="ever_married_choice">
+                                        <option value="" disabled selected>Ever Married</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="smoking_status">Smoking Status</label>
+                                    <select id="smoking_status_choice">
+                                        <option value="" disabled selected>Smoking Status</option>
+                                        <option value="smokes">Currently Smokes</option>
+                                        <option value="formerly smoked">Formerly Smoked</option>
+                                        <option value="never smoked">Never Smoked</option>
+                                        <option value="Unknown">Unknown</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="work_type">Work Type</label>
+                                    <select id="work_type_choice">
+                                        <option value="" disabled selected>Work Type</option>
+                                        <option value="Private">Private</option>
+                                        <option value="Self-employed">Self Employed</option>
+                                        <option value="Govt_job">Government Job</option>
+                                        <option value="children">Children</option>
+                                        <option value="Never_worked">Never Worked</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="col-form-label" for="Residence_type">Residence Type</label>
+                                    <select id="residence_type_choice">
+                                        <option value="" disabled selected>Residence Type</option>
+                                        <option value="Urban">Urban</option>
+                                        <option value="Rural">Rural</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group-sm">
+                            <button id="filter-btn" type="button" class="btn btn-primary">Filter Table</button>
+                            <button id="filter-clear" type="button" class="btn btn-success">Clear Filters</button>
+                        </div>
+                    </div>
+                </div>
+        
+      <div class="container-fluid">
+        <div class="row margin-top-50">
+            <div class="col-md-3">
+
+            </div>
+            <!--DATA TABLE--> 
+            <div class="col-md-9">
+                <div id="table-area" class="">
+                    <table id="table" class="table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th class="table-head">id</th>
+                                <th class="table-head">gender</th>                                
+                                <th class="table-head">age</th>
+                                <th class="table-head">hypertension</th>
+                                <th class="table-head">heart_disease</th>
+                                <th class="table-head">ever_married</th>
+                                <th class="table-head">work_type</th>
+                                <th class="table-head">Residence_type</th>
+                                <th class="table-head">avg_glucose_level</th>
+                                <th class="table-head">bmi</th>
+                                <th class="table-head">smoking_status</th>
+                                <th class="table-head">stroke</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+</div>
+        <p class="lead">
+          Your text here 
+        </p>
+      <h3 class="display-5">Your text here</h1>
+      <p class="lead"> 
+        Your text here    
+         </p>
+         <ul class="lead" >
+          <li> Your text here </li>
+          <li> Your text here</li>
+        </ul>   
+        <br> 
+    <hr class="my-4">
+    <p class="lead">
+      <a class="btn btn-primary btn-lg"
+        href="https://public.tableau.com/profile/yakov.krasnikov#!/vizhome/2016Strokedeathrate/Dashboard4?publish=yes"
+        target="_blank" role="button">Learn more</a>
+    </p>
+  </div>
+  
+</body>
+
+</html>

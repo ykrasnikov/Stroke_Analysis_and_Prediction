@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+<!-- Jquery -->
+<script src=  "https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+<!-- load header -->
+<script>  $(function () {$('#header').load('/static/head_template.html')})</script>
+<div id=header></div>
+
+<!-- JS -->
+<script type="text/javascript" src="/static/js/logic.js"></script>
+
+<!-- body -->
+<body>
+  <!-- load navbar -->
+  <script> $(function () {$('#mybar').load('/static/navbar_template.html')})</script>
+  <div id=mybar></div>
+<!-- cards row  -->
+<div class="row justify-content-center">
+  <!-- 1.1column                                                                   1.1column -->
+  <div class="col-lg-3  col-md-12">
+  <div class="card text-white bg-danger mb-3" >
+    <div class="card-header">Stroke Stats</div>
+    <div class="card-body my_card_b ">
+      <h4 class="card-title">795,000 strokes yearly </h4>
+      <p class="card-text">Someone in the United States has a stroke every 40 seconds. Every 4 minutes, someone dies of stroke.</p>
+    </div>
+  </div>
+</div>
+<!-- 1.2column                                                                   1.2column -->
+  <div class="col-lg-3  col-md-12">
+    <div class="card text-white bg-secondary mb-3 my_card" >
+      <div class="card-header">Stroke Risk </div>
+      <div class="card-body my_card_b">
+        <h4 class="card-title">Medical conditions & lifestyle</h4>
+          <h4 class="card-title"></h4>
+        <p class="card-text">- Age, Heart Disease, Hypertension, Diabetes, Obesity, Alcohol & Tobacco use<br> can affect your chances of having a stroke</p>
+      </div>
+    </div>
+  </div>
+  <!-- 1.3column                                                                   1.3column -->
+  <div class="col-lg-3  col-md-12">
+    <div class="card text-white bg-primary mb-3">
+      <div class="card-header">Data Analysis</div>
+      <div class="card-body my_card_b">
+        <h4 class="card-title">2 Data sets, 10 vizzes</h4>
+        <p class="card-text">State Stroke mortality rate by /ethnicity/gender & household income,<br>Stroke leading Causes & Data exploratory </p>
+      </div>
+    </div>
+  </div>
+  <!-- 1.4column                                                                   1.4column -->
+  <div class="col-lg-3  col-md-12">
+    <div class="card text-white bg-success mb-3" >
+      <div class="card-header">Stroke Prediction</div>
+      <div class="card-body my_card_b">
+        <h4 class="card-title">Logistic Regression</h4>
+        <p class="card-text">Out Sample: <br>
+         stroke event:  precision 0.14, recall  0.80, <br> f1 score  0.24</p>
+      </div>
+    </div>
+  </div>
+  </div>
+<!-- END CARD ROW  -->
+<!-- JUMBOTRONs ROW  -->
+<!-- JUMBOTRON 1 Intro  -->
+  <div class="row justify-content-center">
+    <!-- 2.1column                                                                   2.1column -->
+    <div class="col-lg-9  col-md-12">
+      <div class="jumbotron">
+        <h1 class="display-5">Introduction</h1>
+        <hr class="my-4">
+        
+            <a  href="/static/base_template.html">
+              <figure class="fig1_p1">
+                <img src="../static/images/stroke_logo.jpg" class="rounded img_p1 " alt="Stroke Logo">
+                <figcaption>
+                Stroke
+                </figcaption>
+              </figure>
+        <a>
+          <p class="lead">
+            The objective of the Project is to develop a preliminary screening tool which can be used to identify the likelihood of an individual having a stroke based on general contributing factors.  
+            <br>Project consist of 3 main parts: 
+            stroke mortality rate analysis, leading causes of stroke analysis , data exploratory analysis and ML model building. Data [1] from Kaggle was used as the basis for the predictive model. 
+          </p>
+        <h3 class="display-5">Stroke Facts</h1>
+        <p class="lead"> 
+          A stroke occurs when the blood supply to a region of the brain is suddenly blocked or when a rupture occurs starving the brain cells of oxygen and nutrients.  Blockage obstructing the flow of blood to a region of the brain is called an ischemic stroke and accounts for 87% [3] of all strokes.  The rupturing of blood vessel is called a hemorrhagic stroke and accounts for 13% [4] of all strokes.    
+           </p>
+       
+      </div>
+<!-- JUMBOTRON 2 Mortality rate  -->
+      <div class="jumbotron">
+        <h1 class="display-5">Stroke Mortality Rate</h1>
+        <hr class="my-4">
+          <a  href="vizz_mortality">
+              <figure class="fig1_p1">
+                <img src="../static/images/stroke_mortality.jpg" class="rounded img_p1 " alt="Stroke mortality dashboard">
+                <figcaption>
+                Stroke mortality rate dashboard
+                </figcaption>
+              </figure>
+        <a>
+          <p class="lead">
+            3 years averaged (2015-2017) Stroke Mortality Rate per 100,000 people mapped by each State.
+          </p>
+            <ul class="lead" >
+              <li>Averaged USA mortality rate is around 75. </li>
+              <li>South East region is above average with Alabama leading at 100 death rate.</li>
+              <li>Clear corelation with median household income for South East region.</li>
+              <li>Black Stroke rate is significantly higher then overall , hispanic and asian is lower then overall.</li>
+              <li>Male rate is slighlty higher then female.</li>
+            </ul>   
+            <br> 
+        <hr class="my-4">
+        <p class="lead">
+          <a class="btn btn-primary btn-lg"
+            href="https://public.tableau.com/profile/yakov.krasnikov#!/vizhome/2016Strokedeathrate/Dashboard4?publish=yes"
+            target="_blank" role="button">Learn more</a>
+        </p>
+      </div>
+<!-- JUMBOTRON 2 Mortality rate  -->
+      <div class="jumbotron">
+        <h1 class="display-5">Leading Causes of Stroke</h1>
+        <hr class="my-4">
+        <p class="lead">Age increases your chances for stroke. The older you are, the more likely you are to have a stroke. Unfortunately Anyone can have a stroke at any age. Certain things can increase your chances of having a stroke.  </p>
+        <h3 class="display-5">Conditions</h1>
+        <p class="lead">Common medical conditions that increase chances of having stroke are Previous stroke, High Blood Pressure, Heart disease, 
+          Diabetes.
+        </p>
+        <h3 class="display-5">Behavior</h1>
+          <p class="lead">Common lifestyle choices that increase chances of having stroke are 
+            Obesity, too much Alcohol , Tobaco Use.
+          </p>
+        <hr class="my-4">
+
+        <script
+          type='text/javascript'>                    var divElement = document.getElementById('viz1619561152066'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1527px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+        <br>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg"
+            href="https://public.tableau.com/profile/yakov.krasnikov#!/vizhome/2016Strokedeathrate/Dashboard4?publish=yes"
+            target="_blank" role="button">Learn more</a>
+        </p>
+      </div>
+
+      <div class="jumbotron">
+        <h1 class="display-5">Data Set Exploratory & Model Building</h1>
+        <p class="lead">Dashboard analyzing averaged mortality rate from stroke in each state in the light of social
+          factors such as poverty, gender and ethnicity. </p>
+        <hr class="my-4">
+
+        <script
+          type='text/javascript'>                    var divElement = document.getElementById('viz1619561152066'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1527px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+        <br>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg"
+            href="https://public.tableau.com/profile/yakov.krasnikov#!/vizhome/2016Strokedeathrate/Dashboard4?publish=yes"
+            target="_blank" role="button">Learn more</a>
+        </p>
+      </div>
+    </div>
+        <!-- 2.2column                                                                   2.2column -->
+    <div class="col-lg-3  col-md-12">
+      <section>
+        <div class="jumbotron">
+          <h1 class="display-5">Predict stroke probability</h1>
+          <p class="lead">Enter your data to predict stroke probability </p>
+          <hr class="my-4">
+          <br>
+          <form>
+            <fieldset>
+              <legend>Data Entry</legend>
+              <div class="form-group">
+                <label class="col-form-label" for="gender">Gender</label>
+                <select id="gender">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>                                
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="age">Age</label>
+                <input type="text" class="form-control" value="25" id="age">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="married">Married?</label>
+                <select id="married">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>                                
+                </select>
+            </div>
+        
+        
+            <div class="form-group">
+                <label class="col-form-label" for="heart_disease">Heart Disease?</label>
+                <select id="heart_disease">
+                    <option value="0">No</option>                                
+                    <option value="1">Yes</option>                                
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="smoke_hist">Smoking History</label>
+                <select id="smoke_hist">
+                    <option value="1">Unknown</option>
+                    <option value="2">Formerly Smoked</option>
+                    <option value="3">Never Smoked</option>
+                    <option value="4">Currently Smokes</option>                                
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="work_type">Type of Work</label>
+                <select id="work_type">
+                    <option value="1">Government Job</option>
+                    <option value="2">Never Worked</option>
+                    <option value="3">Private Industry</option>
+                    <option value="4">Self Employed</option>
+                    <option value="5">Child (not employed)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="hypertension">Hypertension?</label>
+                <select id="hypertension">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>                                
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="avg_glucose_level">Average Glucose Level</label>
+                <input type="text" class="form-control" value="100" id="avg_glucose_level">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="bmi">BMI</label>
+                <input type="text" class="form-control" value="29" id="bmi">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="residence_label">Residence</label>
+                <select id="residence_label">
+                    <option value="1">Rural</option>
+                    <option value="0">Urban</option>
+                </select>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                  <button type="button" class="btn btn-primary" id="filter">Make Prediction!</button>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 id="output"></h1>
+                    </div>
+                </div>
+            </div>
+          </div>
+          </form>
+        </div>
+        
+    </div>
+
+  </div>
+  </div>
+
+  </div>
+  
+
+
+</body>
+
+</html>

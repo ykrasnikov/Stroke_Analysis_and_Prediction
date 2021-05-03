@@ -1,0 +1,63 @@
+.logo{
+    height: 40px;
+}
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: 0.0rem;
+    padding-bottom: 0.0rem;
+}
+
+.fig1_p1 {
+    float:left;
+    width: 30%;
+    
+    text-align:center;
+    font-size: large;
+    color: teal;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+.img_p1{
+    width: 100%;
+    max-height: 270px;
+}
+.my_card{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.my_card_b{
+    height: 12rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+}
+
+.team_card_header{
+    padding: 0 0px;
+    text-align: center;
+
+}
+
+.team_card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    text-align: left;
+  }
+  .team_button {
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .team_p1{
+      margin: 0px;
+  }

@@ -8,7 +8,7 @@ from modelHelper import ModelHelper
 import logging
 
 #init app and class
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/static')
 # app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 - Tried changing to 1
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
 modelHelper = ModelHelper()
@@ -26,56 +26,56 @@ def home():
     # Return template and data
     return render_template("index.html")
 
-@app.route("/nav")
-def nav():
-    # Return template and data
-    return render_template("navbar_template.html")
+# @app.route("/nav")
+# def nav():
+#     # Return template and data
+#     return render_template("navbar_template.html")
 
-@app.route("/head")
-def head():
-    # Return template and data
-    return render_template("head_template.html")
+# @app.route("/head")
+# def head():
+#     # Return template and data
+#     return render_template("head_template.html")
 
 
-@app.route("/ml")
-def model_page():
-    # Return template and data
-    return render_template("ml.html")
+# @app.route("/ml")
+# def model_page():
+#     # Return template and data
+#     return render_template("ml.html")
 
-@app.route("/vizz_mortality")
-def dashboard1():
-    # Return template and data
-    return render_template("MortalityRateVizz.html")
+# @app.route("/vizz_mortality")
+# def dashboard1():
+#     # Return template and data
+#     return render_template("MortalityRateVizz.html")
 
-@app.route("/vizz_risk")
-def dashboard2():
-    # Return template and data
-    return render_template("StrokeRiskVizz.html")
+# @app.route("/vizz_risk")
+# def dashboard2():
+#     # Return template and data
+#     return render_template("StrokeRiskVizz.html")
 
-@app.route("/vizz_explore")
-def dashboard3():
-    # Return template and data
-    return render_template("DataExploreVIZZ.html")
+# @app.route("/vizz_explore")
+# def dashboard3():
+#     # Return template and data
+#     return render_template("DataExploreVIZZ.html")
 
-@app.route("/data_display")
-def data():
-    # Return template and data
-    return render_template("Data.html")
+# @app.route("/data_display")
+# def data():
+#     # Return template and data
+#     return render_template("Data.html")
 
-@app.route("/exploration")
-def exploration():
-    # Return template and data
-    return render_template("exploration.html")
+# @app.route("/exploration")
+# def exploration():
+#     # Return template and data
+#     return render_template("exploration.html")
 
-@app.route("/resources")
-def resources():
-    # Return template and data
-    return render_template("resources.html")
+# @app.route("/resources")
+# def resources():
+#     # Return template and data
+#     return render_template("resources.html")
 
-@app.route("/team")
-def about_us():
-    # Return template and data
-    return render_template("team.html")
+# @app.route("/team")
+# def about_us():
+#     # Return template and data
+#     return render_template("team.html")
 
 @app.route("/makePredictions", methods=["POST"])
 def makePredictions():

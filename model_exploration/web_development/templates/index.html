@@ -1,19 +1,15 @@
 <!doctype html>
 <html>
 <!-- Jquery -->
-<script src=  "https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
   crossorigin="anonymous"></script>
 <!-- load header -->
-<script>  $(function () {$('#header').load('/head')})</script>
+<script>  $(function () {$('#header').load('head_template.html')})</script>
 <div id=header></div>
-
-<!-- JS -->
-<script type="text/javascript" src="static/js/logic.js"></script>
-
 <!-- body -->
 <body>
   <!-- load navbar -->
-  <script> $(function () {$('#mybar').load('/nav')})</script>
+  <script> $(function () {$('#mybar').load('navbar_template.html')})</script>
   <div id=mybar></div>
 <!-- cards row  -->
 <div class="row justify-content-center">
@@ -69,7 +65,7 @@
       <div class="jumbotron">
         <h1 class="display-5">Introduction</h1>
         <hr class="my-4">
-        
+          
             <a  href="base_template.html">
               <figure class="fig1_p1">
                 <img src="../static/images/stroke_logo.jpg" class="rounded img_p1 " alt="Stroke Logo">
@@ -93,7 +89,7 @@
       <div class="jumbotron">
         <h1 class="display-5">Stroke Mortality Rate</h1>
         <hr class="my-4">
-          <a  href="vizz_mortality">
+          <a  href="base_template.html">
               <figure class="fig1_p1">
                 <img src="../static/images/stroke_mortality.jpg" class="rounded img_p1 " alt="Stroke mortality dashboard">
                 <figcaption>
@@ -243,13 +239,6 @@
               <div class="col-md-12">
                   <button type="button" class="btn btn-primary" id="filter">Make Prediction!</button>
               </div>
-              <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 id="output"></h1>
-                    </div>
-                </div>
-            </div>
           </div>
           </form>
         </div>
