@@ -1,0 +1,109 @@
+<!doctype html>
+
+<html>
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+<!-- load header -->
+<script>  $(function () { $('#header').load('head_template.html') })</script>
+<div id=header></div>
+<!-- body -->
+
+<body>
+  <!-- load navbar -->
+  <script> $(function () { $('#mybar').load('navbar_template.html') })</script>
+  <div id=mybar></div>
+
+  <!-- JUMBOTRON 1 Template  -->
+  <!-- JUMBOTRON 1 Template  -->
+  <div class="row justify-content-center">
+    <!-- 2.1column                                                                   2.1column -->
+    <div class="col-lg-12  col-md-12">
+      <div class="jumbotron">
+        <h1 class="display-5">Stroke Mortality Rate</h1>
+        <hr class="my-4">
+        <p class="lead">
+          3 years averaged (2015-2017) Stroke Mortality Rate per 100,000 people mapped by each State,
+          filters - gender: overall , ehtnicity: overall.</p>
+        <ul class="lead">
+          <li>Averaged USA mortality rate is around 75. </li>
+          <li>South East region is above average with Alabama leading at 100 death rate.</li>
+        </ul>
+        <br>
+        <a href="vizz_mortality">
+          <figure class="fig1_p1">
+            <img src="../static/images/mortality_rate/overall.jpg" class="rounded img_p1 "
+              alt="Stroke mortality dashboard">
+            <figcaption>
+              Stroke Mortality Rate Vizz
+            </figcaption>
+          </figure>
+        </a>
+         <hr class="my-4">
+         <!-- Para 2 -->
+         <p class="lead">
+          Stroke mortality Rate vs Median Household Income.</p>
+        <ul class="lead">
+          <li>Visible negative correlation between Stroke rate and median household income.</li>
+          <li>Clear correlation with median household income for South East region.</li>
+        </ul>
+        <br>
+      
+          <figure class="fig1_p1">
+            <img src="../static/images/mortality_rate/correlation.jpg" class="rounded img_p1 "
+              alt="Stroke mortality dashboard">
+            <figcaption>
+              Stroke mortality Rate vs Median Household Income
+            </figcaption>
+          </figure>
+         <hr class="my-4">
+         <!-- para3 -->
+         <p class="lead">
+          Race/Entnicity:
+          3 years averaged (2015-2017) Stroke Mortality Rate per 100,000 people mapped by each State,
+          filters - gender: overall , ehtnicity: all.</p>
+        <ul class="lead">
+          <li>Averaged USA mortality rate is around 75. </li>
+          <li>South East region is above average with Alabama leading at 100 death rate.</li>
+        </ul>
+        <br>
+        <a href="vizz_mortality">
+          <figure class="fig1_p1">
+            <img src="../static/images/mortality_rate/Ehtnicity.jpg" class="rounded img_p1 "
+              alt="Stroke mortality dashboard">
+            <figcaption>
+              Stroke Mortality Rate Vizz
+            </figcaption>
+          </figure>
+        </a>
+         <hr class="my-4">
+<!-- para 4 -->
+<p class="lead">
+  Gender:
+  3 years averaged (2015-2017) Stroke Mortality Rate per 100,000 people mapped by each State,
+  filters - gender: all , ehtnicity: overall.</p>
+<ul class="lead">
+  <li>Male rate is slightly higher than female </li>
+</ul>
+<br>
+<a href="vizz_mortality">
+  <figure class="fig1_p1">
+    <img src="../static/images/mortality_rate/Gender.jpg" class="rounded img_p1 "
+      alt="Stroke mortality dashboard">
+    <figcaption>
+      Stroke Mortality Rate Vizz
+    </figcaption>
+  </figure>
+</a>
+ <hr class="my-4">
+          <p class="lead">
+            <a class="btn btn-primary btn-lg"
+              href="https://public.tableau.com/profile/yakov.krasnikov#!/vizhome/2016Strokedeathrate/Dashboard4?publish=yes"
+              target="_blank" role="button">Learn more</a>
+          </p>
+      </div>
+    </div>
+
+</body>
+
+</html>
