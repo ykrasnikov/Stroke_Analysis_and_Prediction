@@ -40,6 +40,8 @@
             <br>              
         </p>
       </div>
+    </div>
+  </div>
 
 <!-- JUMBOTRON 2 Data Cleaning  -->
 <div class="row justify-content-center">
@@ -51,7 +53,7 @@
       
           <a  href="../static/images/machine learning/Data_Cleanup_Basic.JPG" target="_blank">
             <figure class="fig1_p1">
-              <img src="../static/images/machine learning/Data_Cleanup_Basic.JPG" class="rounded img_p1 " alt="Data Gathering" target="_blank">
+              <img src="../static/images/machine learning/Data_Cleanup_Basic.JPG" class="rounded img_p1 " alt="Basic Data Cleanup" target="_blank">
               <figcaption>
               </figcaption>
             </figure>
@@ -70,6 +72,9 @@
           <br>              
       </p>
     </div>
+  </div>
+</div>
+
 <!-- JUMBOTRON 3 Data Cleaning - One Hot  -->
 <div class="row justify-content-center">
   <!-- 2.1column                                                                   2.1column -->
@@ -80,7 +85,7 @@
       
           <a  href="../static/images/machine learning/Data_Cleanup_One_Hot.JPG" target="_blank">
             <figure class="fig1_p1">
-              <img src="../static/images/machine learning/Data_Cleanup_One_Hot.JPG" class="rounded img_p1 " alt="Data Gathering" target="_blank">
+              <img src="../static/images/machine learning/Data_Cleanup_One_Hot.JPG" class="rounded img_p1 " alt="One Hot Cleanup" target="_blank">
               <figcaption>
               </figcaption>
             </figure>
@@ -91,10 +96,13 @@
         <br>
       </p>
       <p class="lead">
-        There are 1,544 members of our dataset with "Unknown" as there smoking status. We researched medical literature in other studies where smoking status was "Unknown". We found the unknown was treated as at data category and that attempts to impute it tended to bias study outcomes. We chose to leave it as a data category (feature).
+        There are 1,544 members of our dataset with "Unknown" as there smoking status. We researched medical literature in other studies where smoking status was "Unknown". We found that "Unknown" was treated as at data category and that attempts to impute it tended to bias study outcomes. We chose to leave it as a data category (feature).
           <br>                    
     </div>
-    <!-- JUMBOTRON 4 Data Cleaning - Flask Processing  -->
+  </div>
+</div>
+
+<!-- JUMBOTRON 4 Data Cleaning - Flask Processing  -->
 <div class="row justify-content-center">
   <!-- 2.1column                                                                   2.1column -->
   <div class="col-md-12">
@@ -104,7 +112,7 @@
       
           <a  href="../static/images/machine learning/Data_Cleanup_Flask.JPG" target="_blank">
             <figure class="fig1_p1">
-              <img src="../static/images/machine learning/Data_Cleanup_Flask.JPG" class="rounded img_p1 " alt="Data Gathering" target="_blank">
+              <img src="../static/images/machine learning/Data_Cleanup_Flask.JPG" class="rounded img_p1 " alt="Flask Cleanup" target="_blank">
               <figcaption>
               </figcaption>
             </figure>
@@ -121,8 +129,39 @@
         Space to underscore in "smoking_status_never smoked"   <br>
           <br>                    
     </div>
+  </div>
+</div>
 
-
+<!-- JUMBOTRON 5 Correlation  -->
+<div class="row justify-content-center">
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12"">
+    <div class="jumbotron" style="height: 550px">
+      <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/machine learning/Correlation.JPG" target="_blank">
+            <figure class="fig1_p1">
+              <img src="../static/images/machine learning/Correlation.JPG" class="rounded img_p2 " alt="Correlation" target="_blank" style="height: 400px"> 
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h3 class="display-5">Correlation - Heatmap</h3>
+      <p class="lead"> 
+        The label and one-hot encoding we performed on for features provided a lot of additional columns. Upon performing a correlation analysis and generating a heatmap, we opted to retain all features as they appeared they would potentially have impact when running our Machine Learning Model.
+        <br>
+      </p>
+      <p class="lead">
+        Some fields member features within our One Hot groupings were not, by themselves, signficant. We opted to keep them because leaving them out the group selection seemed unnecessary and would potentially appear awkward (i.e. "Why a single smoking category?" "Why only one work type?"). <br>                    
+        <br>                    
+      </p>
+      <p class="lead">
+        We sorted correlation descending to visually observe the upper left quadrant of our Heat map as containing the higher impact features. <br>                    
+        <br>                    
+    </div>
+  </div>
+</div>
 <!-- JUMBOTRON 2 Mortality rate  -->
       <div class="jumbotron">
         <h1 class="display-5">Stroke Mortality Rate</h1>
@@ -153,54 +192,6 @@
             target="_blank" role="button">Learn more</a>
         </p>
       </div>
-<!-- JUMBOTRON 2 Mortality rate  -->
-      <div class="jumbotron">
-        <h1 class="display-5">Leading Causes of Stroke</h1>
-        <hr class="my-4">
-        <p class="lead">Age increases your chances for stroke. The older you are, the more likely you are to have a stroke. Unfortunately Anyone can have a stroke at any age. Certain things can increase your chances of having a stroke.  </p>
-        <h3 class="display-5">Conditions</h1>
-        <p class="lead">Common medical conditions that increase chances of having stroke are Previous stroke, High Blood Pressure, Heart disease, 
-          Diabetes.
-        </p>
-        <h3 class="display-5">Behavior</h1>
-          <p class="lead">Common lifestyle choices that increase chances of having stroke are 
-            Obesity, too much Alcohol , Tobaco Use.
-          </p>
-        <hr class="my-4">
-
-        <script
-          type='text/javascript'>                    var divElement = document.getElementById('viz1619561152066'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1527px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
-        <br>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg"
-            href="https://public.tableau.com/profile/yakov.krasnikov#!/vizhome/2016Strokedeathrate/Dashboard4?publish=yes"
-            target="_blank" role="button">Learn more</a>
-        </p>
-      </div>
-
-      <div class="jumbotron">
-        <h1 class="display-5">Data Set Exploratory & Model Building</h1>
-        <p class="lead">Dashboard analyzing averaged mortality rate from stroke in each state in the light of social
-          factors such as poverty, gender and ethnicity. </p>
-        <hr class="my-4">
-
-        <script
-          type='text/javascript'>                    var divElement = document.getElementById('viz1619561152066'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '1527px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
-        <br>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg"
-            href="https://public.tableau.com/profile/yakov.krasnikov#!/vizhome/2016Strokedeathrate/Dashboard4?publish=yes"
-            target="_blank" role="button">Learn more</a>
-        </p>
-      </div>
-    </div>
-
-  </div>
-  </div>
-
-  </div>
-  
-
 
 </body>
 
