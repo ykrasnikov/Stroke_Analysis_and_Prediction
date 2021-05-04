@@ -175,8 +175,18 @@
 
       <div class="jumbotron">
         <h1 class="display-5">Data Set Exploratory & Model Building</h1>
-        <p class="lead">Dashboard analyzing averaged mortality rate from stroke in each state in the light of social
-          factors such as poverty, gender and ethnicity. </p>
+        <p class="lead">Our process for data set aquistion through modeling and deployment are summarized as follows:          
+        </p>
+        <ul class="lead" >
+          <li>Dataset acquired from the <a href="https://www.kaggle.com/fedesoriano/stroke-prediction-dataset" target="_blank"><b> Kaggle </b></a> website. </li>
+          <li>Information was downloaded and imported into Python as a .CSV file.</li>
+          <li>Data clean-up was performed using imputation, Labeling, and One Hot coding </li>
+          <li>Stroke Class imbalance as checked using SMOTE (Synthetic Minority Over-sampling Technique).</li>
+          <li>Three Linear and Five Tree models were evaluated with our final selection being Logistice Regression due to having the best f1-score and recall scores.</li>
+          <li>A flask app was built to allow for the exchange of model inputs and to provide a return of model prediction results as a percent liklihood of Stroke.</li>
+          <li>We built a "Stroke Predictor" input form for our website visitors to enter their own profiles based on the features used in our analysis.</li>
+        </ul>   
+        
         <hr class="my-4">
 
         <br>
