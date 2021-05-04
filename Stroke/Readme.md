@@ -20,7 +20,9 @@ Cerebrovascular accidents (strokes) in 2020 were the 5th [1] leading cause of de
 
 A stroke occurs when the blood supply to a region of the brain is suddenly blocked or when a rupture occurs starving the brain cells of oxygen and nutrients.  Blockage obstructing the flow of blood to a region of the brain is called an ischemic stroke and accounts for 87%[2] of all strokes.  The rupturing of a blood vessel is called a hemorrhagic stroke and accounts for 13%[3] of all strokes.
 <br>
+<br>
 <img src="static/images/report_images/stroke_pics.PNG" width = "450">
+<br>
 <br>
  Source of images [4] 
 
@@ -56,9 +58,7 @@ There were 2,994 (58.60%) “Females”, 2,115 (41.40%) “Males” and 1 “Oth
 92% of strokes occur over the age of 50.
 <br>
 <br>
-<br>
 <img src="static/images/data review/age_corr.PNG" width = "450">
-<br>
 <br>
 <br>
 The charts below are used to represent the general data characteristics defined by Yes/No answers.  The attributes are in stacked panes for comparison purposes and the wider and darker brown bars indicate the higher normalized values.
@@ -70,9 +70,7 @@ The lower Percentage of Not Married for Age Range 80+ could include individuals 
 Age Range 80+ generally has the highest percentage of strokes on a normalized basis.
 <br>
 <br>
-<br>
 <img src="static/images/data review/como1_corr.PNG" width = "450">
-<br>
 <br>
 <br>
 Comorbidities BMI, Glucose (Blood Sugar) and Smoker Status data are represented in the chart below.  BMI (Overweight and Obese), Glucose (Diabetic Risk and Diabetic) and Smoker Status (Formerly Smoked and Current Smoker) have the highest normalized stroke percentages.  The wider and darker brown bars indicate the higher normalized values.
@@ -80,39 +78,31 @@ Comorbidities BMI, Glucose (Blood Sugar) and Smoker Status data are represented 
 The glucose data presented in the dataset is average glucose value. Depending on when a person has eaten, a glucose value can have significant swings in values. Therefore, to create a Glucose Category that can used to filter the data, a blending of Fasting, Just Eaten and Several Hours after eating ranges were merged into ranges.  
 <br>
 <br>
-<br>
 <img src="static/images/data review/como2_corr.PNG" width = "450">
 <br>
 <br>
-<br>
-## Visualizations
 
+## Visualizations
 The data is represented in Tableau.  The markers on each bar represents the total count, stroke total and stroke normalized percentage for the respective filter settings. The values associated with the gender bubbles are total count of the respective gender, total strokes, and stroke normalized percentage for the filter settings.  The last pane is a bubble chart representing all the data in the dataset.  When hovering over a bubble, information associated with the individual is presented.  All panes are tied into the filters and correspond with updated data after each selection.   
-<br>
 <br>
 <br>
 <img src="static/images/data review/tableau_ty.PNG" width = "450"> 
 <br>
 <br>
-<br>
 Additional data sources were used to supplement the stroke visualization effort.  The data was used to create a map of stroke mortality [7] (geographic location) and associated statistics [8].  
 <br>
 <br>
-<br>
 <img src="static/images/report_images/yakov1.PNG" width = "450">  
-<br>
-<br>
-<br>
-<img src="static/images/report_images/yakov1.PNG" width = "450">  
-<br>
 <br>
 <br>
 <img src="static/images/report_images/yakov1.PNG" width = "450">  
 <br>
 <br>
+<img src="static/images/report_images/yakov1.PNG" width = "450">  
 <br>
-## Data Cleaning and Imputation
+<br>
 
+## Data Cleaning and Imputation
 In reviewing the raw data, the bmi attribute was identified as having 201 “N/A” values.  This represents 3.9% of the dataset.  The mean bmi value of 28.89 was used as the replacement value for the “N/A” values. 
 
 The raw dataset has a total 1,544 “Unknown” smoking status values representing 30.4% of the dataset.  A closer look at the data showed 32% of the “Unknown” values were between the ages of 0-10 and 41% was between the ages of 0-15.    The Centers for Disease Control and Prevention (CDC) defines a current smoker [9] as an Adult who has previously smoked 100 cigarettes in their lifetime and who currently smokes.  Based on the CDC definition and the high percentage of “Unkown” values in the age range 0-10, it was originally discussed to replace those values with “never smoked”.   Additional research of online literature to address this issue of “Unknown” labels was conducted and it was found that “Unknown” is an accepted category.   The final decision was made to leave the “Unknown” smoker status values as presented in the raw dataset.
@@ -120,45 +110,34 @@ The raw dataset has a total 1,544 “Unknown” smoking status values representi
 One-Hot Encoding was used for categorical data work_type and smoking_status to be used in the linear and tree models. 
 <br>
 <br>
-<br>
 <img src="static/images/machine learning data prep/one_hot_encoding.PNG" width = "450"> 
 <br>
 <br>
-<br>
-## Data Exploring
 
+## Data Exploring
 Most of the data was biased in the histograms, except for age and Residence_type. For the Yes/No questions, the data was left biased correlating to 0 which presents No as the answer to the respective question.   The attributes bmi and average_glucose_level were left biased representing the lower end of their broad spectrum of data points. 
 <br>
 <br>
-<br>
+
 ## Correlation Heat Map
-<br>
-<br>
-<br>
 The correlation heat map is presented below.  Values closer to zero indicate minimal to no linear relationship.  The more positively correlated attributes approach 1, meaning as one attribute increases so does the other.    The more negatively correlated attributes approach -1, meaning as one attribute increases the other decreases.
-<br>
 <br>
 <br>
 <img src="static/images/machine learning data prep/correlation_heat_map.PNG" width = "450"> 
 <br>
 <br>
-<br>
 
 ## Addressing Data Bias
-
 There is a large imbalance of stroke incidents in the dataset.  To improve the model learning capabilities, bias was addressed using Synthetic Minority Oversampling Technique (SMOTE) to temporarily adjust the percentage of stroke “Yes” values. 
  
 SMOTE utilizes k-nearest neighbor technique to create synthetic data.  In this case, increase the number of stroke “Yes” values.  SMOTE randomly chooses data from the stroke “Yes” values and then the respective k-nearest “No” neighbors.  Synthetic “Yes” values are continually made until they closely match the “No” values.   See before and after percentages below.  
 <br>
 <br>
-<br>
 <img src="static/images/report_images/both_smote.PNG" width = "450"> 
-<br>
 <br>
 <br>
 
 ## Machine Model Evaluation
-
 The primary objectives of the model evaluation process were to identify a model that did not overfit the data, generated the highest f1-score for 1 (“Yes” for stroke) and generated the highest recall for “Yes”.  The large number of 0 values (“No” for stroke), ensured a good f1-score for 0, but our objective was to identify a model that will give the best “Yes” result.  That presented a challenge for the models.  As noted above, SMOTE was used to help with this issue.
 
 ### Linear Models
@@ -176,29 +155,22 @@ The best results for the tree models were AdaBoostClassifier and GradientBoostin
 Upon further evaluation, AdaBoostClassifier and, GradientBoostingClassifier gave recall values of 0.30 and 0.20.  In each case, the models had a high value of missed 1 (“Yes” for Stroke) in the Out Samples.
 
 ## Model Selection
-
 When reviewing the best of the respective Liner and Trees models, the Tree models had the best f1-scores, but extremely poor recall values.  Therefore, the Liner model was selected with a little lower f1-score, but much better recall value.
-<br>
 <br>
 <br>
 <img src="static/images/machine learning/model_selection.PNG" width = "450">
 <br>
 <br>
-<br>
 
 ## Feature Importance
-
 Feature importance is presented below.  The chart presents the assigned value of the relationship between stroke and identified attribute.  Like the correlation heat map, the values closer to zero indicate minimal to no linear relationship.  The more positively correlated attributes approach 1, meaning as one attribute increases so does the other.    The more negatively correlated attributes approach -1, meaning as one attribute increases the other decreases.
-<br>
 <br>
 <br>
 <img src="static/images/machine learning data prep/Correlation Chart.PNG" width = "450">
 <br>
 <br>
-<br>
 
 ## Conclusion
-
 Objective: To determine if a reliable model was developed, the risk factors identified by the American Stroke Association will be compared against the Features Importance table and live data will be tested.
 
 Revisiting the Hypothesis criteria
@@ -230,7 +202,6 @@ Married and both work_type attributes we picked up as dateset dependencies.
 The risk factors from the American Stroke Association have been identified in the Feature Importance chart with positive values. 
 
 ## Actionable Items
-
 This model is one of many tools which are needed to increase awareness and help reduce stroke incidents.  As the noted above, the American Stroke Association states that 80% of strokes are preventable.   
 
 ### Actionable item
