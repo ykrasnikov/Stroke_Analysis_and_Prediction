@@ -58,7 +58,7 @@ def dashboard3():
     return render_template("DataExploreVIZZ.html")
 
 @app.route("/data_display")
-def data():
+def data_display():
     # Return template and data
     return render_template("Data.html")
 
