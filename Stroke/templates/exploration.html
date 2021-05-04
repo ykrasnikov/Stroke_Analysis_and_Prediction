@@ -319,7 +319,7 @@ load header
 <div class="row justify-content-center">
   <!-- 2.1column                                                                   2.1column -->
   <div class="col-md-12">
-    <div class="jumbotron" style="height: 550px">
+    <div class="jumbotron" style="height: 630px">
       <!-- <h1 class="display-5">The Logistics Regression Model</h1> -->
       <hr class="my-4">
       
@@ -332,14 +332,17 @@ load header
       <a>
         <h3 class="display-5">The Logistics Regression Model</h3>
       <p class="lead"> 
-        A final run with parameters set as class_weight = balanced, max_iter=1000 and randon_state=42. 
+        A final run with parameters set as class_weight = balanced, max_iter=1000 and randon_state=42. The f1-score (0.24) and recall (0.82) gave better results when the full data set was run.
         <br>
       </p>
       <p class="lead">
-        The f1-score (0.24) and recall (0.82) gave better results when the full data set was run.  <br>                     
+        The accuracy of our chosen model was not optimal at 74% with other models having 90% or greater. Our emphasis was to err on the side of a possible stroke prediction that was in fact, unlikely, versus not identifying an indvidual who was truely at risk of stroke.     <br>                     
+        
+      </p>
+      <p class="lead">
+        Hence, the focus on f1-score and recall with the Logistics Regression Model far exceeding the results of others in those categories.      <br>                     
         <br>                    
       </p>
-      
     </div>
   </div>
 </div>
@@ -347,26 +350,40 @@ load header
 <div class="row justify-content-center">
   <!-- 2.1column                                                                   2.1column -->
   <div class="col-md-12">
-    <div class="jumbotron" style="height: 550px">
+    <div class="jumbotron" style="height: 900px">
       <!-- <h1 class="display-5">Model Deployment</h1> -->
       <hr class="my-4">
       
           <a  href="../static/images/model testing/model.PNG" target="_blank">
             <figure class="fig1_p1">
-              <img src="../static/images/model testing/model.PNG" class="rounded img_p2" alt="Logistics Regression Model" target="_blank" > 
+              <img src="../static/images/model testing/model.PNG" class="rounded img_p2" alt="Logistics Regression Model" target="_blank" style="height: 700px" > 
               <figcaption>
               </figcaption>
             </figure>
       <a>
         <h3 class="display-5">Model Deployment</h3>
       <p class="lead"> 
-        The deployed model allows users to input data and a stroke likelihood is calculated. 
+        With the logistics model chosen, numbers were rerun for the complete dataset. The model was packaged to run remote using a pickle dump to "finalized_model.sav".         
         <!-- As the values get closer to zero, it indicates minimal to no linear relationship.  -->
         <br>
       </p>
-      <p class="lead">
-        .    
-        <br>                     
+      <p class="lead"> 
+      A flask app was built to allow for the exchange of model inputs and to provide a return of model prediction results as a percent liklihood of Stroke.      
+        <br>
+      </p>
+      <p class="lead"> 
+      We built a "Stroke Predictor" input form for our website visitors to enter their own profiles based on the features used in our analysis.      
+        <br>
+      </p>
+      <p class="lead"> 
+      The model returned and reported the percentage. In addition, we grouped and presented the percentage results into 4 probability categories:
+      <p class="lead">                    
+        <ul class="lead" >
+          <li>Very Unlikely: 0 to 25 percent </li>
+          <li>Unlikely: >25 to 50 percent</li>
+          <li>Likely: >50 to 75 percent</li>
+          <li>Very Likely!: >75 to 100 percent</li>          
+        </ul>                      
         <br>                    
       </p>
       
