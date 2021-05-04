@@ -1,9 +1,13 @@
 <!doctype html>
 <html>
+<!-- Jquery
+<script src=  "https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
 
-<!-- load header -->
-<!-- <script>  $(function () {$('#header').load('/head')})</script>
+load header
+<script>  $(function () {$('#header').load('/head')})</script>
 <div id=header></div> -->
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,6 +39,8 @@
   <script type="text/javascript" src="../static/js/app3.js"></script>
   <title>Stroke Probability Prediction </title>
 </head>
+
+
 <!-- body -->
 <body>
   <!-- load navbar -->
@@ -326,17 +332,60 @@
       <a>
         <h3 class="display-5">The Logistics Regression Model</h3>
       <p class="lead"> 
-        I will add some words here. 
+        A final run with parameters set as class_weight = balanced, max_iter=1000 and randon_state=42. 
         <br>
       </p>
       <p class="lead">
-        I will add some words here. <br>                     
+        The f1-score (0.24) and recall (0.82) gave better results when the full data set was run.  <br>                     
         <br>                    
       </p>
       
     </div>
   </div>
 </div>
+<!-- JUMBOTRON 10 Stroke - Model Deployment  -->
+<div class="row justify-content-center">
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+    <div class="jumbotron" style="height: 550px">
+      <!-- <h1 class="display-5">Model Deployment</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/model testing/model.PNG" target="_blank">
+            <figure class="fig1_p1">
+              <img src="../static/images/model testing/model.PNG" class="rounded img_p2" alt="Logistics Regression Model" target="_blank" > 
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h3 class="display-5">Model Deployment</h3>
+      <p class="lead"> 
+        The deployed model allows users to input data and a stroke likelihood is calculated. 
+        <!-- As the values get closer to zero, it indicates minimal to no linear relationship.  -->
+        <br>
+      </p>
+      <p class="lead">
+        .    
+        <br>                     
+        <br>                    
+      </p>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+      
+    </div>
+  </div>
+</div>
+
 
 </body>
 
