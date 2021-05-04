@@ -7,13 +7,13 @@ Use of Machine Learning and Tableau Dashboards to Help Predict Strokes and Under
 To develop a model which can reliably predict the likelihood of a stroke using patient input information.
 
 ## Programs Used
--Python
--Pandas
--Jupyter Notebook
--JavaScript
--HTML5/CSS
--scikit-learn
--imbalanced-learn
+•  Python
+•  Pandas
+•  Jupyter Notebook
+•  JavaScript
+•  HTML5/CSS
+•  scikit-learn
+•  imbalanced-learn
 
 ## Introduction
 Cerebrovascular accidents (strokes) in 2020 were the 5th [1] leading cause of death in the United States.
@@ -51,9 +51,10 @@ The raw dataset for machine learning consists of 5110 unique rows. Each row cont
 
 There were 2,994 (58.60%) “Females”, 2,115 (41.40%) “Males” and 1 “Other” in the gender attribute.  The “Other” gender was dropped from the dataset for a resulting dataset of 5,109 unique rows.
 
-Trends identified in the dataset
+### Trends identified in the dataset
 
-92% of strokes occur over the age of 50. 
+92% of strokes occur over the age of 50.
+ 
 <img src="static/images/data review/age_corr.PNG" width = "450">
 
 
@@ -121,13 +122,13 @@ SMOTE utilizes k-nearest neighbor technique to create synthetic data.  In this c
 
 The primary objectives of the model evaluation process were to identify a model that did not overfit the data, generated the highest f1-score for 1 (“Yes” for stroke) and generated the highest recall for “Yes”.  The large number of 0 values (“No” for stroke), ensured a good f1-score for 0, but our objective was to identify a model that will give the best “Yes” result.  That presented a challenge for the models.  As noted above, SMOTE was used to help with this issue.
 
-Linear Models
+### Linear Models
 
 Models evaluated were LogisticRegression, KNeighborsClassifier and Support Vector Machines (svm).  
 
 The best results for the linear model was LogisticRegression with an Out Sample f1-score of 0.23.  KNeighborsClassifier and svm gave 0.16 and 0.19, respectively.
 
-Tree Models
+### Tree Models
 
 Models evaluated were DecisionTreeClassifier, RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier and XGBClassifier. 
 
@@ -211,26 +212,4 @@ Actionable item
 [8] USDA Economic Research Service, U.S. Department of Agriculture, https://www.ers.usda.gov/data-products/county-level-data-sets/download-data/
 
 [9] Centers for Disease Control and Prevention, National Center for Health Statistics, https://www.cdc.gov/nchs/nhis/tobacco/tobacco_glossary.htm
-
-
-
-Example images
-
-<img src="assets/images/age_v_smoker.PNG" width = "450">
-<img src="assets/images/hover_text_box.png" width = "450">
-
-<h2>Correlations observed Between Health Risks and Age, Income</h2>
-<br>
-<p>Six categories of information was plotted.  General observations per category will be presented first, followed  
-by observations obtained when plotted against each other.</p>
-
-<p>The first category is median age, Age (Median).  There are five states with a relatively similar value of 42(+/-)
-years of age, median, for the highest value.  These states are Florida (FL), New Hampshire (NH), Vermont (VT),  
-West Virginia (WV) and Maine (ME).  Maine has the highest median age of 44.1.  The state with the lowest age, median,
-is Utah (UT) at 30.5.  This difference between this value and the next cluster of average age is approximately 3 years
-of age.</p>
-
-
-
-
 
