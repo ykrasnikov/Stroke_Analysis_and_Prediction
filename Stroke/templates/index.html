@@ -1,203 +1,216 @@
 <!doctype html>
 <html>
+
 <head>
-<!-- Jquery -->
-<!-- load header -->
-<!-- <script>  $(function () {$('#header').load('/head')})</script>
-<div id=header></div> -->
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Jquery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
-  <!-- Bootstrap CSS -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="../static/styles/bootstrap.css">
-  <link rel="stylesheet" href="../static/styles/bootstrap.min.css">
-  <link rel="stylesheet" href="../static/styles/styles.css">
-     <!-- DataTables -->
- <script src="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"></script>
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!-- load header -->
+  <!-- <script>  $(function () {$('#header').load('/head')})</script>
+<div id=header></div> -->
 
-  <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
-  <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://bootswatch.com/_assets/js/custom.js"></script>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="../static/styles/bootstrap.css">
+    <link rel="stylesheet" href="../static/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/styles/styles.css">
+    <!-- DataTables -->
+    <script src="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
 
-<!-- D3 -->
-<script src="https://d3js.org/d3.v6.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
- <!-- DataTables -->
- <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>   
-  
-<!-- local JS -->
-  <script type="text/javascript" src="../static/js/logic.js"></script>
-  <!--  -->
-  <script type="text/javascript" src="../static/js/app3.js"></script>
-  <title>Stroke Probability Prediction </title>
-</head>
-<!-- JS -->
-<script type="text/javascript" src="static/js/logic.js"></script>
+    <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://bootswatch.com/_assets/js/custom.js"></script>
+
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <!-- DataTables -->
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+    <!-- local JS -->
+    <script type="text/javascript" src="../static/js/logic.js"></script>
+    <!--  -->
+    <script type="text/javascript" src="../static/js/app3.js"></script>
+    <title>Stroke Probability Prediction </title>
+  </head>
+  <!-- JS -->
+  <script type="text/javascript" src="static/js/logic.js"></script>
 
 </head>
 
 <!-- body -->
+
 <body>
   <!-- load navbar -->
-  <script> $(function () {$('#mybar').load('/nav')})</script>
+  <script> $(function () { $('#mybar').load('/nav') })</script>
   <div id=mybar></div>
-<!-- cards row  -->
-<div class="row justify-content-center">
-  <!-- 1.1column                                                                   1.1column -->
-  <div class="col-lg-3  col-md-12">
-  <div class="card text-white bg-danger mb-3" >
-    <div class="card-header">Stroke Stats</div>
-    <div class="card-body my_card_b ">
-      <h4 class="card-title">795,000 strokes yearly </h4>
-      <p class="card-text">Someone in the United States has a stroke every 40 seconds. Every 4 minutes, someone dies of stroke.</p>
+  <!-- cards row  -->
+  <div class="row justify-content-center">
+    <!-- 1.1column                                                                   1.1column -->
+    <div class="col-lg-3  col-md-12">
+      <div class="card text-white bg-danger mb-3 my_card">
+        <div class="card-header">Stroke Stats</div>
+        <div class="card-body my_card_b ">
+          <h4 class="card-title">795,000 strokes yearly </h4>
+          <p class="card-text">Someone in the United States has a stroke every 40 seconds. Every 4 minutes, someone dies
+            of stroke.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<!-- 1.2column                                                                   1.2column -->
-  <div class="col-lg-3  col-md-12">
-    <div class="card text-white bg-secondary mb-3 my_card" >
-      <div class="card-header">Stroke Risk </div>
-      <div class="card-body my_card_b">
-        <h4 class="card-title">Medical conditions & lifestyle</h4>
+    <!-- 1.2column                                                                   1.2column -->
+    <div class="col-lg-3  col-md-12">
+      <div class="card text-white bg-secondary mb-3 my_card">
+        <div class="card-header">Stroke Risk </div>
+        <div class="card-body my_card_b">
+          <h4 class="card-title">Medical conditions & lifestyle</h4>
           <h4 class="card-title"></h4>
-        <p class="card-text">- Age, Heart Disease, Hypertension, Diabetes, Obesity, Alcohol & Tobacco use<br> can affect your chances of having a stroke</p>
+          <p class="card-text">- Age, Heart Disease, Hypertension, Diabetes, Obesity, Alcohol & Tobacco use<br> can
+            affect your chances of having a stroke</p>
+        </div>
+      </div>
+    </div>
+    <!-- 1.3column                                                                   1.3column -->
+    <div class="col-lg-3  col-md-12">
+      <div class="card text-white bg-primary mb-3 my_card ">
+        <div class="card-header">Data Analysis</div>
+        <div class="card-body my_card_b">
+          <h4 class="card-title">2 Data sets, 10 vizzes</h4>
+          <p class="card-text">State Stroke mortality rate by /ethnicity/gender & household income,<br>Stroke leading
+            Causes & Data exploratory </p>
+        </div>
+      </div>
+    </div>
+    <!-- 1.4column                                                                   1.4column -->
+    <div class="col-lg-3  col-md-12">
+      <div class="card text-white bg-success mb-3 my_card ">
+        <div class="card-header">Stroke Prediction</div>
+        <div class="card-body my_card_b">
+          <h4 class="card-title">Logistic Regression</h4>
+          <p class="card-text">Out Sample: <br>
+            stroke event: precision 0.14, recall 0.80, <br> f1 score 0.24</p>
+        </div>
       </div>
     </div>
   </div>
-  <!-- 1.3column                                                                   1.3column -->
-  <div class="col-lg-3  col-md-12">
-    <div class="card text-white bg-primary mb-3">
-      <div class="card-header">Data Analysis</div>
-      <div class="card-body my_card_b">
-        <h4 class="card-title">2 Data sets, 10 vizzes</h4>
-        <p class="card-text">State Stroke mortality rate by /ethnicity/gender & household income,<br>Stroke leading Causes & Data exploratory </p>
-      </div>
-    </div>
-  </div>
-  <!-- 1.4column                                                                   1.4column -->
-  <div class="col-lg-3  col-md-12">
-    <div class="card text-white bg-success mb-3" >
-      <div class="card-header">Stroke Prediction</div>
-      <div class="card-body my_card_b">
-        <h4 class="card-title">Logistic Regression</h4>
-        <p class="card-text">Out Sample: <br>
-         stroke event:  precision 0.14, recall  0.80, <br> f1 score  0.24</p>
-      </div>
-    </div>
-  </div>
-  </div>
-<!-- END CARD ROW  -->
-<!-- JUMBOTRONs ROW  -->
-<!-- JUMBOTRON 1 Intro  -->
+  <!-- END CARD ROW  -->
+  <!-- JUMBOTRONs ROW  -->
+  <!-- JUMBOTRON 1 Intro  -->
   <div class="row justify-content-center">
     <!-- 2.1column                                                                   2.1column -->
     <div class="col-lg-9  col-md-12">
       <div class="jumbotron">
         <h1 class="display-5">Introduction</h1>
         <hr class="my-4">
-        
-            <a  href="mortality_analysis">
-              <figure class="fig1_p1">
-                <img src="../static/images/stroke_logo.jpg" class="rounded img_p1 " alt="Stroke Logo">
-                <figcaption>
-                Stroke
-                </figcaption>
-              </figure>
-        <a>
-          <p class="lead">
-            The objective of the Project is to develop a preliminary screening tool which can be used to identify the likelihood of an individual having a stroke based on general contributing factors.  
-            <br>Project consist of 3 main parts: 
-            stroke mortality rate analysis, leading causes of stroke analysis , data exploratory analysis and ML model building. Data [1] from Kaggle was used as the basis for the predictive model. 
-          </p>
-        <h3 class="display-5">Stroke Facts</h1>
-        <p class="lead"> 
-          A stroke occurs when the blood supply to a region of the brain is suddenly blocked or when a rupture occurs starving the brain cells of oxygen and nutrients.  Blockage obstructing the flow of blood to a region of the brain is called an ischemic stroke and accounts for 87% [3] of all strokes.  The rupturing of blood vessel is called a hemorrhagic stroke and accounts for 13% [4] of all strokes.    
-           </p>
-       
+
+        <a href="mortality_analysis">
+          <figure class="fig1_p1">
+            <img src="../static/images/stroke_logo.jpg" class="rounded img_p1 " alt="Stroke Logo">
+            <figcaption>
+              Stroke
+            </figcaption>
+          </figure>
+          <a>
+            <p class="lead">
+              The objective of the Project is to develop a preliminary screening tool which can be used to identify the
+              likelihood of an individual having a stroke based on general contributing factors.
+              <br>Project consist of 3 main parts:
+              stroke mortality rate analysis, leading causes of stroke analysis , data exploratory analysis and ML model
+              building. Data from Kaggle was used as the basis for the predictive model.
+            </p>
+            <h3 class="display-5">Stroke Facts</h1>
+              <p class="lead">
+                A stroke occurs when the blood supply to a region of the brain is suddenly blocked or when a rupture
+                occurs starving the brain cells of oxygen and nutrients. Blockage obstructing the flow of blood to a
+                region of the brain is called an ischemic stroke and accounts for 87% of all strokes. The rupturing
+                of blood vessel is called a hemorrhagic stroke and accounts for 13% of all strokes.
+              </p>
+
       </div>
-<!-- JUMBOTRON 2 Mortality rate  -->
+      <!-- JUMBOTRON 2 Mortality rate  -->
       <div class="jumbotron">
         <h1 class="display-5">Stroke Mortality Rate</h1>
         <hr class="my-4">
-          <a  href="mortality_analysis">
-              <figure class="fig1_p1">
-                <img src="../static/images/stroke_mortality.jpg" class="rounded img_p1 " alt="Stroke mortality dashboard">
-                <figcaption>
-                Stroke mortality rate dashboard
-                </figcaption>
-              </figure>
-        <a>
-          <p class="lead">
-            3 years averaged (2015-2017) Stroke Mortality Rate per 100,000 people mapped by each State.
-          </p>
-            <ul class="lead" >
+        <a href="mortality_analysis">
+          <figure class="fig1_p1">
+            <img src="../static/images/stroke_mortality.jpg" class="rounded img_p1 " alt="Stroke mortality dashboard">
+            <figcaption>
+              Stroke mortality rate dashboard
+            </figcaption>
+          </figure>
+          <a>
+            <p class="lead">
+              3 years averaged (2015-2017) Stroke Mortality Rate per 100,000 people mapped by each State.
+            </p>
+            <ul class="lead">
               <li>Averaged USA mortality rate is around 76. </li>
               <li>South East region is above average with Alabama leading rate at around 100 deaths.</li>
               <li>Clear corelation with median household income for South East region.</li>
-              <li>Black Stroke rate is significantly higher than overall , Hispanic and Asian are lower than overall.</li>
+              <li>Black Stroke rate is significantly higher than overall , Hispanic and Asian are lower than overall.
+              </li>
               <li>Male rate is slighlty higher than female.</li>
-            </ul>   
-            <br> 
-        <hr class="my-4">
-        <p class="lead">
-          <a class="btn btn-primary btn-lg"
-            href="mortality_analysis"
-            target="_blank" role="button">Learn more</a>
-        </p>
+            </ul>
+            <br>
+            <hr class="my-4">
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="mortality_analysis" target="_blank" role="button">Learn more</a>
+            </p>
       </div>
-<!-- JUMBOTRON 2 causes of stroke  -->
+      <!-- JUMBOTRON 2 causes of stroke  -->
       <div class="jumbotron">
         <h1 class="display-5">Leading Causes of Stroke</h1>
         <hr class="my-4">
-        <p class="lead">Age increases your chances for stroke. The older you are, the more likely you are to have a stroke. Unfortunately Anyone can have a stroke at any age. Certain things can increase your chances of having a stroke.  </p>
+        <p class="lead">Age increases your chances for stroke. The older you are, the more likely you are to have a
+          stroke. Unfortunately Anyone can have a stroke at any age. Certain things can increase your chances of having
+          a stroke. </p>
         <h3 class="display-5">Conditions</h1>
-        <p class="lead">Common medical conditions that increase chances of having stroke are Previous stroke, High Blood Pressure, Heart disease, 
-          Diabetes.
-        </p>
-        <h3 class="display-5">Behavior</h1>
-          <p class="lead">Common lifestyle choices that increase chances of having stroke are 
-            Obesity, too much Alcohol , Tobaco Use.
+          <p class="lead">Common medical conditions that increase chances of having stroke are Previous stroke, High
+            Blood Pressure, Heart disease,
+            Diabetes.
           </p>
-        <hr class="my-4">
+          <h3 class="display-5">Behavior</h1>
+            <p class="lead">Common lifestyle choices that increase chances of having stroke are
+              Obesity, too much Alcohol , Tobaco Use.
+            </p>
+            <hr class="my-4">
 
-        <br>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg"
-            href="vizz_explore"
-            target="_blank" role="button">Learn more</a>
-        </p>
+            <br>
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="vizz_explore" target="_blank" role="button">Learn more</a>
+            </p>
       </div>
 
       <div class="jumbotron">
         <h1 class="display-5">Data Set Exploratory & Model Building</h1>
-        <p class="lead">Our process for data set aquistion through modeling and deployment are summarized as follows:          
+        <p class="lead">Our process for data set aquistion through modeling and deployment are summarized as follows:
         </p>
-        <ul class="lead" >
-          <li>Dataset acquired from the <a href="https://www.kaggle.com/fedesoriano/stroke-prediction-dataset" target="_blank"><b> Kaggle </b></a> website. </li>
+        <ul class="lead">
+          <li>Dataset acquired from the <a href="https://www.kaggle.com/fedesoriano/stroke-prediction-dataset"
+              target="_blank"><b> Kaggle </b></a> website. </li>
           <li>Information was downloaded and imported into Python as a .CSV file.</li>
           <li>Data clean-up was performed using imputation, Labeling, and One Hot coding </li>
           <li>Stroke Class imbalance as checked using SMOTE (Synthetic Minority Over-sampling Technique).</li>
-          <li>Three Linear and Five Tree models were evaluated with our final selection being Logistice Regression due to having the best f1-score and recall scores.</li>
-          <li>A flask app was built to allow for the exchange of model inputs and to provide a return of model prediction results as a percent liklihood of Stroke.</li>
-          <li>We built a "Stroke Predictor" input form for our website visitors to enter their own profiles based on the features used in our analysis.</li>
-        </ul>   
-        
+          <li>Three Linear and Five Tree models were evaluated with our final selection being Logistice Regression due
+            to having the best f1-score and recall scores.</li>
+          <li>A flask app was built to allow for the exchange of model inputs and to provide a return of model
+            prediction results as a percent liklihood of Stroke.</li>
+          <li>We built a "Stroke Predictor" input form for our website visitors to enter their own profiles based on the
+            features used in our analysis.</li>
+        </ul>
+
         <hr class="my-4">
 
         <br>
         <p class="lead">
-          <a class="btn btn-primary btn-lg"
-            href="exploration"
-            target="_blank" role="button">Learn more</a>
+          <a class="btn btn-primary btn-lg" href="exploration" target="_blank" role="button">Learn more</a>
         </p>
       </div>
     </div>
-        <!-- 2.2column                                                                   2.2column -->
+    <!-- 2.2column                                                                   2.2column -->
     <div class="col-lg-3  col-md-12">
       <section>
         <div class="jumbotron">
@@ -211,93 +224,140 @@
               <div class="form-group">
                 <label class="col-form-label" for="gender">Gender</label>
                 <select id="gender">
-                    <option value="1">Male</option>
-                    <option value="0">Female</option>                                
+                  <option value="1">Male</option>
+                  <option value="0">Female</option>
                 </select>
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label class="col-form-label" for="age">Age</label>
                 <input type="text" class="form-control" value="25" id="age">
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label class="col-form-label" for="married">Married?</label>
                 <select id="married">
-                    <option value="1">Yes</option>
-                    <option value="0">No</option>                                
+                  <option value="1">Yes</option>
+                  <option value="0">No</option>
                 </select>
-            </div>
-        
-        
-            <div class="form-group">
+              </div>
+
+
+              <div class="form-group">
                 <label class="col-form-label" for="heart_disease">Heart Disease?</label>
                 <select id="heart_disease">
-                    <option value="0">No</option>                                
-                    <option value="1">Yes</option>                                
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
                 </select>
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label class="col-form-label" for="smoke_hist">Smoking History</label>
                 <select id="smoke_hist">
-                    <option value="1">Unknown</option>
-                    <option value="2">Formerly Smoked</option>
-                    <option value="3">Never Smoked</option>
-                    <option value="4">Currently Smokes</option>                                
+                  <option value="1">Unknown</option>
+                  <option value="2">Formerly Smoked</option>
+                  <option value="3">Never Smoked</option>
+                  <option value="4">Currently Smokes</option>
                 </select>
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label class="col-form-label" for="work_type">Type of Work</label>
                 <select id="work_type">
-                    <option value="1">Government Job</option>
-                    <option value="2">Never Worked</option>
-                    <option value="3">Private Industry</option>
-                    <option value="4">Self Employed</option>
-                    <option value="5">Child (not employed)</option>
+                  <option value="1">Government Job</option>
+                  <option value="2">Never Worked</option>
+                  <option value="3">Private Industry</option>
+                  <option value="4">Self Employed</option>
+                  <option value="5">Child (not employed)</option>
                 </select>
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label class="col-form-label" for="hypertension">Hypertension?</label>
                 <select id="hypertension">
-                    <option value="0">No</option>
-                    <option value="1">Yes</option>                                
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
                 </select>
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label class="col-form-label" for="avg_glucose_level">Average Glucose Level</label>
                 <input type="text" class="form-control" value="100" id="avg_glucose_level">
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label class="col-form-label" for="bmi">BMI</label>
                 <input type="text" class="form-control" value="29" id="bmi">
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label class="col-form-label" for="residence_label">Residence</label>
                 <select id="residence_label">
-                    <option value="1">Rural</option>
-                    <option value="0">Urban</option>
+                  <option value="1">Rural</option>
+                  <option value="0">Urban</option>
                 </select>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                  <button type="button" class="btn btn-primary" id="filter" style = "margin-bottom:25px" >Make Prediction!</button>
               </div>
-              <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 id="output"></h1>
-                    </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <button type="button" class="btn btn-primary" id="filter" style="margin-bottom:25px">Make
+                    Prediction!</button>
                 </div>
-            </div>
-          </div>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h1 id="output"></h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </form>
         </div>
-        
+        <!-- JUMBOTRON table Glossary  -->
+        <div class="jumbotron">
+          <h1 class="display-5">Glossary</h1>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Term</th>
+                <th scope="col">Definition</th>
+                <th scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-active">
+                <th scope="row">Stroke</th>
+                <td>is a disease that affects the arteries leading to and within the brain. It is the No. 5 cause of
+                  death and a leading cause of disability in the United States.</td>
+                <td><a href="https://www.stroke.org/en/about-stroke" target="_blank">About Stroke</a></td>
+              </tr>
+              <tr >
+                <th scope="row">Hypertension</th>
+                <td>or High Blood Pressure is a disease when the force of your blood pushing against the walls of your
+                  blood vessels, is consistently too high</td>
+                <td><a
+                    href="https://www.heart.org/en/health-topics/high-blood-pressure/the-facts-about-high-blood-pressure/what-is-high-blood-pressure"
+                    target="_blank">About Hypertension</a></td>
+              </tr>
+              <tr class="table-active">
+                <th scope="row">Diabetes</th>
+                <td>is a chronic health condition that affects how your body turns food into energy, causing your blood glucose, also called blood sugar,  to be too high</td>
+                <td><a href="https://www.cdc.gov/diabetes/basics/diabetes.html" target="_blank">About Diabetes</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Overweight & Obesity</th>
+                <td>is a condition when person weight is higher than what is considered as a healthy weight for a given height is described as overweight or obesity. Body Mass Index, or BMI, is used as a screening tool for overweight or obesity</td>
+                <td><a
+                    href="https://www.cdc.gov/obesity/adult/defining.html"
+                    target="_blank">About Overweight & Obesity</a></td>
+              </tr>
+
+
+              <tr></tr>
+
+
+            </tbody>
+          </table>
+        </div>
+
+
+
     </div>
-
-  </div>
   </div>
 
   </div>
-  
+
 
 
 </body>
