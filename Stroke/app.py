@@ -60,7 +60,7 @@ def dashboard3():
 @app.route("/data_display")
 def data_display():
     # Return template and data
-    return render_template("Data.html")
+    return render_template("data.html")
 
 @app.route("/exploration")
 def exploration():
