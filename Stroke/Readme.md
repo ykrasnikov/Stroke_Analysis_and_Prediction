@@ -21,7 +21,7 @@ Cerebrovascular accidents (strokes) in 2020 were the 5th [1] leading cause of de
 A stroke occurs when the blood supply to a region of the brain is suddenly blocked or when a rupture occurs starving the brain cells of oxygen and nutrients.  Blockage obstructing the flow of blood to a region of the brain is called an ischemic stroke and accounts for 87%[2] of all strokes.  The rupturing of a blood vessel is called a hemorrhagic stroke and accounts for 13%[3] of all strokes.
 <br>
 <img src="static/images/report_images/stroke_pics.PNG" width = "450">
-
+<br>
  Source of images [4] 
 
  A third category of stroke called a transient ischemic attack (TIA), or "mini stroke", caused by a temporary clot can also occur. The TIA has contributing factors similar to those of the ischemic and hemorrhagic stroke. 
@@ -54,10 +54,13 @@ There were 2,994 (58.60%) “Females”, 2,115 (41.40%) “Males” and 1 “Oth
 ### Trends identified in the dataset
 
 92% of strokes occur over the age of 50.
- <br>
+<br>
+<br>
+<br>
 <img src="static/images/data review/age_corr.PNG" width = "450">
 <br>
-
+<br>
+<br>
 The charts below are used to represent the general data characteristics defined by Yes/No answers.  The attributes are in stacked panes for comparison purposes and the wider and darker brown bars indicate the higher normalized values.
 
 The values associated with each bar are number of individuals in the designated age range, the normalized percentage of strokes in that range and the total number of individuals suffering a stroke in that range. 
@@ -66,27 +69,47 @@ The lower Percentage of Not Married for Age Range 80+ could include individuals 
 
 Age Range 80+ generally has the highest percentage of strokes on a normalized basis.
 <br>
+<br>
+<br>
 <img src="static/images/data review/como1_corr.PNG" width = "450">
+<br>
+<br>
 <br>
 Comorbidities BMI, Glucose (Blood Sugar) and Smoker Status data are represented in the chart below.  BMI (Overweight and Obese), Glucose (Diabetic Risk and Diabetic) and Smoker Status (Formerly Smoked and Current Smoker) have the highest normalized stroke percentages.  The wider and darker brown bars indicate the higher normalized values.
 
 The glucose data presented in the dataset is average glucose value. Depending on when a person has eaten, a glucose value can have significant swings in values. Therefore, to create a Glucose Category that can used to filter the data, a blending of Fasting, Just Eaten and Several Hours after eating ranges were merged into ranges.  
 <br>
+<br>
+<br>
 <img src="static/images/data review/como2_corr.PNG" width = "450">
+<br>
+<br>
 <br>
 ## Visualizations
 
 The data is represented in Tableau.  The markers on each bar represents the total count, stroke total and stroke normalized percentage for the respective filter settings. The values associated with the gender bubbles are total count of the respective gender, total strokes, and stroke normalized percentage for the filter settings.  The last pane is a bubble chart representing all the data in the dataset.  When hovering over a bubble, information associated with the individual is presented.  All panes are tied into the filters and correspond with updated data after each selection.   
 <br>
+<br>
+<br>
 <img src="static/images/data review/tableau_ty.PNG" width = "450"> 
+<br>
+<br>
 <br>
 Additional data sources were used to supplement the stroke visualization effort.  The data was used to create a map of stroke mortality [7] (geographic location) and associated statistics [8].  
 <br>
-<img src="static/images/report_images/yakov1.PNG" width = "450">  
+<br>
 <br>
 <img src="static/images/report_images/yakov1.PNG" width = "450">  
 <br>
+<br>
+<br>
 <img src="static/images/report_images/yakov1.PNG" width = "450">  
+<br>
+<br>
+<br>
+<img src="static/images/report_images/yakov1.PNG" width = "450">  
+<br>
+<br>
 <br>
 ## Data Cleaning and Imputation
 
@@ -96,17 +119,29 @@ The raw dataset has a total 1,544 “Unknown” smoking status values representi
    
 One-Hot Encoding was used for categorical data work_type and smoking_status to be used in the linear and tree models. 
 <br>
+<br>
+<br>
 <img src="static/images/machine learning data prep/one_hot_encoding.PNG" width = "450"> 
+<br>
+<br>
 <br>
 ## Data Exploring
 
 Most of the data was biased in the histograms, except for age and Residence_type. For the Yes/No questions, the data was left biased correlating to 0 which presents No as the answer to the respective question.   The attributes bmi and average_glucose_level were left biased representing the lower end of their broad spectrum of data points. 
 <br>
+<br>
+<br>
 ## Correlation Heat Map
+<br>
+<br>
 <br>
 The correlation heat map is presented below.  Values closer to zero indicate minimal to no linear relationship.  The more positively correlated attributes approach 1, meaning as one attribute increases so does the other.    The more negatively correlated attributes approach -1, meaning as one attribute increases the other decreases.
 <br>
+<br>
+<br>
 <img src="static/images/machine learning data prep/correlation_heat_map.PNG" width = "450"> 
+<br>
+<br>
 <br>
 
 ## Addressing Data Bias
@@ -115,7 +150,11 @@ There is a large imbalance of stroke incidents in the dataset.  To improve the m
  
 SMOTE utilizes k-nearest neighbor technique to create synthetic data.  In this case, increase the number of stroke “Yes” values.  SMOTE randomly chooses data from the stroke “Yes” values and then the respective k-nearest “No” neighbors.  Synthetic “Yes” values are continually made until they closely match the “No” values.   See before and after percentages below.  
 <br>
+<br>
+<br>
 <img src="static/images/report_images/both_smote.PNG" width = "450"> 
+<br>
+<br>
 <br>
 
 ## Machine Model Evaluation
@@ -140,14 +179,22 @@ Upon further evaluation, AdaBoostClassifier and, GradientBoostingClassifier gave
 
 When reviewing the best of the respective Liner and Trees models, the Tree models had the best f1-scores, but extremely poor recall values.  Therefore, the Liner model was selected with a little lower f1-score, but much better recall value.
 <br>
+<br>
+<br>
 <img src="static/images/machine learning/model_selection.PNG" width = "450">
+<br>
+<br>
 <br>
 
 ## Feature Importance
 
 Feature importance is presented below.  The chart presents the assigned value of the relationship between stroke and identified attribute.  Like the correlation heat map, the values closer to zero indicate minimal to no linear relationship.  The more positively correlated attributes approach 1, meaning as one attribute increases so does the other.    The more negatively correlated attributes approach -1, meaning as one attribute increases the other decreases.
 <br>
+<br>
+<br>
 <img src="static/images/machine learning data prep/Correlation Chart.PNG" width = "450">
+<br>
+<br>
 <br>
 
 ## Conclusion
@@ -165,7 +212,7 @@ Basis Risk Factors from American Stroke Association common to the dataset.
 <p>•  Age (cannot be controlled)</p>
 <p>•  Gender (cannot be controlled)</p>
 
-Hypothesis Validated
+### Hypothesis Validated
 
 The top eleven in the Feature Importance chart:
 <p>•  Age</p>
