@@ -128,7 +128,7 @@ The correlation heat map is presented below.  Values closer to zero indicate min
 <br>
 
 ## Addressing Data Bias
-There is a large imbalance of stroke incidents in the dataset.  To improve the model learning capabilities, bias was addressed using Synthetic Minority Oversampling Technique (SMOTE) to temporarily adjust the percentage of stroke “Yes” values. 
+There is a large imbalance of stroke incidents in the dataset.  To improve the model learning capabilities, bias was addressed using Synthetic Minority Oversampling Technique (SMOTE). 
  
 SMOTE utilizes k-nearest neighbor technique to create synthetic data.  In this case, increase the number of stroke “Yes” values.  SMOTE randomly chooses data from the stroke “Yes” values and then the respective k-nearest “No” neighbors.  Synthetic “Yes” values are continually made until they closely match the “No” values.   See before and after percentages below.  
 <br>
