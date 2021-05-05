@@ -1,0 +1,396 @@
+<!doctype html>
+<html>
+<!-- Jquery
+<script src=  "https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+load header
+<script>  $(function () {$('#header').load('/head')})</script>
+<div id=header></div> -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <!-- Bootstrap CSS -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="../static/styles/bootstrap.css">
+  <link rel="stylesheet" href="../static/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/styles/styles.css">
+     <!-- DataTables -->
+ <script src="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"></script>
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+  <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+  <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://bootswatch.com/_assets/js/custom.js"></script>
+
+<!-- D3 -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+ <!-- DataTables -->
+ <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>   
+  
+<!-- local JS -->
+  <script type="text/javascript" src="../static/js/logic.js"></script>
+  <!--  -->
+  <script type="text/javascript" src="../static/js/app3.js"></script>
+  <title>Stroke Probability Prediction </title>
+</head>
+
+
+<!-- body -->
+<body>
+  <!-- load navbar -->
+  <script> $(function () {$('#mybar').load('/nav')})</script>
+  <div id=mybar></div>
+
+
+  <!-- JUMBOTRONs ROW  -->
+<!-- para 1 Data Gather  -->
+  <div class="row justify-content-center analysis_page">
+    <!-- 2.1column                                                                   2.1column -->
+    <div class="col-md-12">
+      <br>
+        <h1 class="display-5">Stroke Exploration and analysis</h1>
+        <hr class="my-4">
+        
+            <a  href="../static/images/machine learning/data_gathering.JPG" target="_blank">
+              <figure class="fig1_p2">
+                <img src="../static/images/machine learning/data_gathering.JPG" class="rounded img_p2 " alt="Data Gathering" target="_blank">
+                <figcaption>
+                </figcaption>
+              </figure>
+        <a>
+          <h2 class="display-5">Sourcing and Data Gathering</h2>
+        <p class="lead"> 
+          We sourced our data from the Stroke Prediction Dataset on the <a href="https://www.kaggle.com/fedesoriano/stroke-prediction-dataset" target="_blank"><b> Kaggle </b></a> website.
+          <br>The dataset was downloaded as a .csv file to explore and clean for data analysis and modeling.
+        </p>
+        <p class="lead">
+          We chose to "Stoke Prediction Database" as it was rich with information regarding the incidence of stroke and permitted us to develop a robust model that would attempt to predict it.
+            <br>              
+        </p>
+    </div>
+
+<!-- para 2 Data Cleaning  -->
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+      <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/machine learning/Data_Cleanup_Basic.JPG" target="_blank">
+            <figure class="fig1_p2">
+              <img src="../static/images/machine learning/Data_Cleanup_Basic.JPG" class="rounded img_p2 " alt="Basic Data Cleanup" target="_blank">
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h2 class="display-5">Initial Data Cleanup</h2>
+      <p class="lead"> 
+        “Other” gender category, considered non-impactful, was dropped from the dataset, resulting in removing 1 row of data.
+        <br>
+      </p>
+      <p class="lead">
+        In reviewing the raw data, the bmi attribute was identified as having 201 “N/A” values.  This represents 3.9% of the dataset.  The mean bmi value of 28.89 was used to impute the “N/A” values. 
+          <br>              
+      </p>
+      <p class="lead">
+        Gender, Marriage Status, and Residence were set up as Labels (1/0 for male / female, yes / no and rural / urban ). 
+          <br>              
+      </p>
+    
+  </div>
+
+<!-- JUMBOTRON 3 Data Cleaning - One Hot  -->
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+
+      <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/machine learning/Data_Cleanup_One_Hot.JPG" target="_blank">
+            <figure class="fig1_p2">
+              <img src="../static/images/machine learning/Data_Cleanup_One_Hot.JPG" class="rounded img_p2 " alt="One Hot Cleanup" target="_blank">
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h2 class="display-5">One Hot - Data Cleanup</h2>
+      <p class="lead"> 
+        One Hot endcoding was use to split out Work_Type (5 types) and Smoking_Status (4 types) features.
+        <br>
+      </p>
+      <p class="lead">
+        There are 1,544 members of our dataset with "Unknown" as there smoking status. We researched medical literature in other studies where smoking status was "Unknown". We found that "Unknown" was treated as at data category and that attempts to impute it tended to bias study outcomes. We chose to leave it as a data category (feature).
+          <br>                    
+    </div>
+ 
+
+<!-- JUMBOTRON 4 Data Cleaning - Flask Processing  -->
+
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+
+      <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/machine learning/Data_Cleanup_Flask.JPG" target="_blank">
+            <figure class="fig1_p2">
+              <img src="../static/images/machine learning/Data_Cleanup_Flask.JPG" class="rounded img_p2 " alt="Flask Cleanup" target="_blank">
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h2 class="display-5">Flask Processing - Data Cleanup</h2>
+      <p class="lead"> 
+        We found fields with dashes and spaces that were causing our Flask processing to error out. 
+        <br>
+      </p>
+      <p class="lead">
+        Three field names were updated:   <br>                    
+        Dash to underscore and lower case in "work_type_Self-employed"   <br>
+        Space to underscore in "smoking_status_formerly smoked"   <br>
+        Space to underscore in "smoking_status_never smoked"   <br>
+          <br>                    
+    </div>
+
+
+<!-- JUMBOTRON 5 Correlation  -->
+
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+
+      <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/machine learning/Correlation.JPG" target="_blank">
+            <figure class="fig1_p2">
+              <img src="../static/images/machine learning/Correlation.JPG" class="rounded img_p2 " alt="Correlation" target="_blank" > 
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h2 class="display-5">Correlation - Heatmap</h2>
+      <p class="lead"> 
+        The label and one-hot encoding we performed on for features provided a lot of additional columns. Upon performing a correlation analysis and generating a heatmap, we opted to retain all features as they appeared they would potentially have impact when running our Machine Learning Model.
+        <br>
+      </p>
+      <p class="lead">
+        Some fields member features within our One Hot groupings were not, by themselves, signficant. We opted to keep them because leaving them out the group selection seemed unnecessary and would potentially appear awkward (i.e. "Why a single smoking category?" "Why only one work type?"). <br>                    
+        <br>                    
+      </p>
+      <p class="lead">
+        We sorted correlation descending to visually observe the upper left quadrant of our Heat map as containing the higher impact features. <br>                    
+        <br>                    
+    </div>
+
+<!-- JUMBOTRON 6 Stroke - Imbalanced Data Class  -->
+
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+      <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/machine learning/Stroke_Class_Pre_Smote.JPG" target="_blank">
+            <figure class="fig1_p1">
+              <img src="../static/images/machine learning/Stroke_Class_Pre_Smote.JPG" class="rounded img_p2 " alt="Stroke Pre-Smote" target="_blank" > 
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h2 class="display-5">Stroke - An Imbalanced Class</h2>
+      <p class="lead"> 
+        After we established features and began running models, we observed numerous warning regarding lack of data and noticed our predictions were over reporting non-stroke and under reporting stroke.
+        <br>
+      </p>
+      <p class="lead">
+        We determined stroke occurance was being overwelmed in the analysis by non-stroke. <br>                     
+        <br>                    
+      </p>
+      <p class="lead">
+        We sought and found a tool (SMOTE - Synthetic Minority Over-sampling Technique) to help with our im-balanced stroke class. <br>                    
+        <br>                    
+    </div>
+
+<!-- JUMBOTRON 6 Stroke - With SMOTE Now a Balanced Data Class  -->
+
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+
+      <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/machine learning/Stroke_Class_Post_Smote.JPG" target="_blank">
+            <figure class="fig1_p1">
+              <img src="../static/images/machine learning/Stroke_Class_Post_Smote.JPG" class="rounded img_p2 " alt="Stroke Post-Smote" target="_blank" > 
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h2 class="display-5">Stroke after SMOTE - A Balanced Class - How does it do it? </h2>
+      <p class="lead"> 
+        SMOTE selects samples in the minority class that are close and then draws lines between them. New sample points are located on these lines.
+        <br>
+      </p>
+      <p class="lead">
+        To be more precise, a random sample is chosen, and then a KNN algorithm is used to select neighbors to which lines are drawn. With this procedure, you can create as many synthetic samples as needed. This makes SMOTE perfect for datasets of all sizes. <br>                     
+        <br>                    
+      </p>
+      <p class="lead">
+        The only real downside is that synthetic examples are created without “consulting” the majority class. This could result in overlapping samples in both classes. <br>                    
+        <br>                    
+      </p>
+    </div>
+
+
+<!-- JUMBOTRON 7 Stroke - Machine Learning Models  -->
+
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+
+      <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/machine learning/ML_Models.JPG" target="_blank">
+            <figure class="fig1_p1">
+              <img src="../static/images/machine learning/ML_Models.JPG" class="rounded img_p2" alt="ML Models" target="_blank" > 
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h2 class="display-5">Machine Learning Models Tested</h2>
+      <p class="lead"> 
+        In seeking to obtain an optimal stroke prediction, we ran 8 Machine learning models.
+        <br>
+      </p>
+      <p class="lead">
+        Three were linear and five were tree models. <br>                     
+        <br>                    
+      </p>
+      
+    </div>
+
+
+<!-- JUMBOTRON 8 Stroke - Selecting our Machine Learning Model of Choice  -->
+
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+
+      <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/machine learning/model_selection.PNG" target="_blank">
+            <figure class="fig1_p1">
+              <img src="../static/images/machine learning/model_selection.PNG" class="rounded img_p2" alt="Model Selection" target="_blank" > 
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h2 class="display-5">Machine Learning Model Selected</h2>
+      <p class="lead"> 
+        We compared f1-score and Recall for stoke outcomes Identified the top 3 models for consideration. 
+        <br>
+      </p>
+      <p class="lead">
+        The Logistics Regression model, having a far superior Recall score for stroke, was selected. <br>                     
+        <br>                    
+      </p>
+      
+    </div>
+
+<!-- JUMBOTRON 9 Stroke - The Logistics Regression Model  -->
+
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+
+      <!-- <h1 class="display-5">The Logistics Regression Model</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/machine learning/loregress_final.PNG" target="_blank">
+            <figure class="fig1_p1">
+              <img src="../static/images/machine learning/loregress_final.PNG" class="rounded img_p2" alt="Logistics Regression Model" target="_blank" > 
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h2 class="display-5">The Logistics Regression Model</h2>
+      <p class="lead"> 
+        A final run with parameters set as class_weight = balanced, max_iter=1000 and randon_state=42. The f1-score (0.24) and recall (0.82) gave better results when the full data set was run.
+        <br>
+      </p>
+      <p class="lead">
+        The accuracy of our chosen model was not optimal at 74% with other models having 90% or greater. Our emphasis was to err on the side of a possible stroke prediction that was in fact, unlikely, versus not identifying an indvidual who was truely at risk of stroke.     <br>                     
+        
+      </p>
+      <p class="lead">
+        Hence, the focus on f1-score and recall with the Logistics Regression Model far exceeding the results of others in those categories.      <br>                     
+        <br>                    
+      </p>
+    </div>
+
+<!-- JUMBOTRON 10 Stroke - Model Deployment  -->
+
+  <!-- 2.1column                                                                   2.1column -->
+  <div class="col-md-12">
+
+      <!-- <h1 class="display-5">Model Deployment</h1> -->
+      <hr class="my-4">
+      
+          <a  href="../static/images/model testing/model.PNG" target="_blank">
+            <figure class="fig1_p3">
+              <img src="../static/images/model testing/model.PNG" class="rounded img_p2" alt="Logistics Regression Model" target="_blank"  > 
+              <figcaption>
+              </figcaption>
+            </figure>
+      <a>
+        <h2 class="display-5">Model Deployment</h2>
+      <p class="lead"> 
+        With the logistics model chosen, numbers were rerun for the complete dataset. The model was packaged to run remote using a pickle dump to "finalized_model.sav".         
+        <!-- As the values get closer to zero, it indicates minimal to no linear relationship.  -->
+        <br>
+      </p>
+      <p class="lead"> 
+      A flask app was built to allow for the exchange of model inputs and to provide a return of model prediction results as a percent liklihood of Stroke.      
+        <br>
+      </p>
+      <p class="lead"> 
+      We built a "Stroke Predictor" input form for our website visitors to enter their own profiles based on the features used in our analysis.      
+        <br>
+      </p>
+      <p class="lead"> 
+      The model returns and reports the percentage. In addition, we group and present the percentage results into 4 probability categories:
+      <p class="lead">                    
+        <ul class="lead" >
+          <li>Very Unlikely: 0 to 25 percent </li>
+          <li>Unlikely: >25 to 50 percent</li>
+          <li>Likely: >50 to 75 percent</li>
+          <li>Very Likely!: >75 to 100 percent</li>          
+        </ul>                      
+        <br>                    
+      </p>
+      
+    </div>
+ 
+
+
+
+
+
+
+
+
+      
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+</html>
+
+
+
