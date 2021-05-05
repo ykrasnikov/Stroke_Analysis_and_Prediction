@@ -105,7 +105,7 @@ function buildTableString(strokeData) {
         data: datarows,
         "defaultContent": "", 
 
-        "pageLength": 20, 
+        "pageLength": 15, 
         dom: 'Bfrtip', //lbfrtip if you want the length changing thing
         buttons: [
             { extend: 'copyHtml5' },
