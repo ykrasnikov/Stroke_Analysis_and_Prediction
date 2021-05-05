@@ -49,22 +49,22 @@ load header
 
 
   <!-- JUMBOTRONs ROW  -->
-<!-- JUMBOTRON 1 Data Gather  -->
-  <div class="row justify-content-center">
+<!-- para 1 Data Gather  -->
+  <div class="row justify-content-center analysis_page">
     <!-- 2.1column                                                                   2.1column -->
     <div class="col-md-12">
-      <div class="jumbotron">
+      <br>
         <h1 class="display-5">Stroke Exploration and analysis</h1>
         <hr class="my-4">
         
             <a  href="../static/images/machine learning/data_gathering.JPG" target="_blank">
-              <figure class="fig1_p1">
-                <img src="../static/images/machine learning/data_gathering.JPG" class="rounded img_p1 " alt="Data Gathering" target="_blank">
+              <figure class="fig1_p2">
+                <img src="../static/images/machine learning/data_gathering.JPG" class="rounded img_p2 " alt="Data Gathering" target="_blank">
                 <figcaption>
                 </figcaption>
               </figure>
         <a>
-          <h3 class="display-5">Sourcing and Data Gathering</h3>
+          <h2 class="display-5">Sourcing and Data Gathering</h2>
         <p class="lead"> 
           We sourced our data from the Stroke Prediction Dataset on the <a href="https://www.kaggle.com/fedesoriano/stroke-prediction-dataset" target="_blank"><b> Kaggle </b></a> website.
           <br>The dataset was downloaded as a .csv file to explore and clean for data analysis and modeling.
@@ -73,26 +73,22 @@ load header
           We chose to "Stoke Prediction Database" as it was rich with information regarding the incidence of stroke and permitted us to develop a robust model that would attempt to predict it.
             <br>              
         </p>
-      </div>
     </div>
-  </div>
 
-<!-- JUMBOTRON 2 Data Cleaning  -->
-<div class="row justify-content-center">
+<!-- para 2 Data Cleaning  -->
   <!-- 2.1column                                                                   2.1column -->
   <div class="col-md-12">
-    <div class="jumbotron">
       <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
       <hr class="my-4">
       
           <a  href="../static/images/machine learning/Data_Cleanup_Basic.JPG" target="_blank">
-            <figure class="fig1_p1">
-              <img src="../static/images/machine learning/Data_Cleanup_Basic.JPG" class="rounded img_p1 " alt="Basic Data Cleanup" target="_blank">
+            <figure class="fig1_p2">
+              <img src="../static/images/machine learning/Data_Cleanup_Basic.JPG" class="rounded img_p2 " alt="Basic Data Cleanup" target="_blank">
               <figcaption>
               </figcaption>
             </figure>
       <a>
-        <h3 class="display-5">Initial Data Cleanup</h3>
+        <h2 class="display-5">Initial Data Cleanup</h2>
       <p class="lead"> 
         “Other” gender category, considered non-impactful, was dropped from the dataset, resulting in removing 1 row of data.
         <br>
@@ -105,26 +101,24 @@ load header
         Gender, Marriage Status, and Residence were set up as Labels (1/0 for male / female, yes / no and rural / urban ). 
           <br>              
       </p>
-    </div>
+    
   </div>
-</div>
 
 <!-- JUMBOTRON 3 Data Cleaning - One Hot  -->
-<div class="row justify-content-center">
   <!-- 2.1column                                                                   2.1column -->
   <div class="col-md-12">
-    <div class="jumbotron">
+
       <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
       <hr class="my-4">
       
           <a  href="../static/images/machine learning/Data_Cleanup_One_Hot.JPG" target="_blank">
-            <figure class="fig1_p1">
-              <img src="../static/images/machine learning/Data_Cleanup_One_Hot.JPG" class="rounded img_p1 " alt="One Hot Cleanup" target="_blank">
+            <figure class="fig1_p2">
+              <img src="../static/images/machine learning/Data_Cleanup_One_Hot.JPG" class="rounded img_p2 " alt="One Hot Cleanup" target="_blank">
               <figcaption>
               </figcaption>
             </figure>
       <a>
-        <h3 class="display-5">One Hot - Data Cleanup</h3>
+        <h2 class="display-5">One Hot - Data Cleanup</h2>
       <p class="lead"> 
         One Hot endcoding was use to split out Work_Type (5 types) and Smoking_Status (4 types) features.
         <br>
@@ -133,25 +127,24 @@ load header
         There are 1,544 members of our dataset with "Unknown" as there smoking status. We researched medical literature in other studies where smoking status was "Unknown". We found that "Unknown" was treated as at data category and that attempts to impute it tended to bias study outcomes. We chose to leave it as a data category (feature).
           <br>                    
     </div>
-  </div>
-</div>
+ 
 
 <!-- JUMBOTRON 4 Data Cleaning - Flask Processing  -->
-<div class="row justify-content-center">
+
   <!-- 2.1column                                                                   2.1column -->
   <div class="col-md-12">
-    <div class="jumbotron">
+
       <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
       <hr class="my-4">
       
           <a  href="../static/images/machine learning/Data_Cleanup_Flask.JPG" target="_blank">
-            <figure class="fig1_p1">
-              <img src="../static/images/machine learning/Data_Cleanup_Flask.JPG" class="rounded img_p1 " alt="Flask Cleanup" target="_blank">
+            <figure class="fig1_p2">
+              <img src="../static/images/machine learning/Data_Cleanup_Flask.JPG" class="rounded img_p2 " alt="Flask Cleanup" target="_blank">
               <figcaption>
               </figcaption>
             </figure>
       <a>
-        <h3 class="display-5">Flask Processing - Data Cleanup</h3>
+        <h2 class="display-5">Flask Processing - Data Cleanup</h2>
       <p class="lead"> 
         We found fields with dashes and spaces that were causing our Flask processing to error out. 
         <br>
@@ -163,25 +156,24 @@ load header
         Space to underscore in "smoking_status_never smoked"   <br>
           <br>                    
     </div>
-  </div>
-</div>
+
 
 <!-- JUMBOTRON 5 Correlation  -->
-<div class="row justify-content-center">
+
   <!-- 2.1column                                                                   2.1column -->
   <div class="col-md-12">
-    <div class="jumbotron" style="height: 550px">
+
       <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
       <hr class="my-4">
       
           <a  href="../static/images/machine learning/Correlation.JPG" target="_blank">
-            <figure class="fig1_p1">
-              <img src="../static/images/machine learning/Correlation.JPG" class="rounded img_p2 " alt="Correlation" target="_blank" style="height: 400px"> 
+            <figure class="fig1_p2">
+              <img src="../static/images/machine learning/Correlation.JPG" class="rounded img_p2 " alt="Correlation" target="_blank" > 
               <figcaption>
               </figcaption>
             </figure>
       <a>
-        <h3 class="display-5">Correlation - Heatmap</h3>
+        <h2 class="display-5">Correlation - Heatmap</h2>
       <p class="lead"> 
         The label and one-hot encoding we performed on for features provided a lot of additional columns. Upon performing a correlation analysis and generating a heatmap, we opted to retain all features as they appeared they would potentially have impact when running our Machine Learning Model.
         <br>
@@ -194,24 +186,22 @@ load header
         We sorted correlation descending to visually observe the upper left quadrant of our Heat map as containing the higher impact features. <br>                    
         <br>                    
     </div>
-  </div>
-</div>
+
 <!-- JUMBOTRON 6 Stroke - Imbalanced Data Class  -->
-<div class="row justify-content-center">
+
   <!-- 2.1column                                                                   2.1column -->
   <div class="col-md-12">
-    <div class="jumbotron" style="height: 550px">
       <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
       <hr class="my-4">
       
           <a  href="../static/images/machine learning/Stroke_Class_Pre_Smote.JPG" target="_blank">
             <figure class="fig1_p1">
-              <img src="../static/images/machine learning/Stroke_Class_Pre_Smote.JPG" class="rounded img_p2 " alt="Stroke Pre-Smote" target="_blank" style="height: 400px"> 
+              <img src="../static/images/machine learning/Stroke_Class_Pre_Smote.JPG" class="rounded img_p2 " alt="Stroke Pre-Smote" target="_blank" > 
               <figcaption>
               </figcaption>
             </figure>
       <a>
-        <h3 class="display-5">Stroke - An Imbalanced Class</h3>
+        <h2 class="display-5">Stroke - An Imbalanced Class</h2>
       <p class="lead"> 
         After we established features and began running models, we observed numerous warning regarding lack of data and noticed our predictions were over reporting non-stroke and under reporting stroke.
         <br>
@@ -224,24 +214,23 @@ load header
         We sought and found a tool (SMOTE - Synthetic Minority Over-sampling Technique) to help with our im-balanced stroke class. <br>                    
         <br>                    
     </div>
-  </div>
-</div>
+
 <!-- JUMBOTRON 6 Stroke - With SMOTE Now a Balanced Data Class  -->
-<div class="row justify-content-center">
+
   <!-- 2.1column                                                                   2.1column -->
   <div class="col-md-12">
-    <div class="jumbotron" style="height: 550px">
+
       <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
       <hr class="my-4">
       
           <a  href="../static/images/machine learning/Stroke_Class_Post_Smote.JPG" target="_blank">
             <figure class="fig1_p1">
-              <img src="../static/images/machine learning/Stroke_Class_Post_Smote.JPG" class="rounded img_p2 " alt="Stroke Post-Smote" target="_blank" style="height: 400px"> 
+              <img src="../static/images/machine learning/Stroke_Class_Post_Smote.JPG" class="rounded img_p2 " alt="Stroke Post-Smote" target="_blank" > 
               <figcaption>
               </figcaption>
             </figure>
       <a>
-        <h3 class="display-5">Stroke after SMOTE - A Balanced Class - How does it do it? </h3>
+        <h2 class="display-5">Stroke after SMOTE - A Balanced Class - How does it do it? </h2>
       <p class="lead"> 
         SMOTE selects samples in the minority class that are close and then draws lines between them. New sample points are located on these lines.
         <br>
@@ -255,25 +244,24 @@ load header
         <br>                    
       </p>
     </div>
-  </div>
-</div>
+
 
 <!-- JUMBOTRON 7 Stroke - Machine Learning Models  -->
-<div class="row justify-content-center">
+
   <!-- 2.1column                                                                   2.1column -->
   <div class="col-md-12">
-    <div class="jumbotron">
+
       <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
       <hr class="my-4">
       
           <a  href="../static/images/machine learning/ML_Models.JPG" target="_blank">
             <figure class="fig1_p1">
-              <img src="../static/images/machine learning/ML_Models.JPG" class="rounded img_p1" alt="ML Models" target="_blank" > 
+              <img src="../static/images/machine learning/ML_Models.JPG" class="rounded img_p2" alt="ML Models" target="_blank" > 
               <figcaption>
               </figcaption>
             </figure>
       <a>
-        <h3 class="display-5">Machine Learning Models Tested</h3>
+        <h2 class="display-5">Machine Learning Models Tested</h2>
       <p class="lead"> 
         In seeking to obtain an optimal stroke prediction, we ran 8 Machine learning models.
         <br>
@@ -284,25 +272,24 @@ load header
       </p>
       
     </div>
-  </div>
-</div>
+
 
 <!-- JUMBOTRON 8 Stroke - Selecting our Machine Learning Model of Choice  -->
-<div class="row justify-content-center">
+
   <!-- 2.1column                                                                   2.1column -->
   <div class="col-md-12">
-    <div class="jumbotron">
+
       <!-- <h1 class="display-5">Stoke Exploration and analysis</h1> -->
       <hr class="my-4">
       
           <a  href="../static/images/machine learning/model_selection.PNG" target="_blank">
             <figure class="fig1_p1">
-              <img src="../static/images/machine learning/model_selection.PNG" class="rounded img_p1" alt="Model Selection" target="_blank" > 
+              <img src="../static/images/machine learning/model_selection.PNG" class="rounded img_p2" alt="Model Selection" target="_blank" > 
               <figcaption>
               </figcaption>
             </figure>
       <a>
-        <h3 class="display-5">Machine Learning Model Selected</h3>
+        <h2 class="display-5">Machine Learning Model Selected</h2>
       <p class="lead"> 
         We compared f1-score and Recall for stoke outcomes Identified the top 3 models for consideration. 
         <br>
@@ -313,13 +300,12 @@ load header
       </p>
       
     </div>
-  </div>
-</div>
+
 <!-- JUMBOTRON 9 Stroke - The Logistics Regression Model  -->
-<div class="row justify-content-center">
+
   <!-- 2.1column                                                                   2.1column -->
   <div class="col-md-12">
-    <div class="jumbotron" style="height: 630px">
+
       <!-- <h1 class="display-5">The Logistics Regression Model</h1> -->
       <hr class="my-4">
       
@@ -330,7 +316,7 @@ load header
               </figcaption>
             </figure>
       <a>
-        <h3 class="display-5">The Logistics Regression Model</h3>
+        <h2 class="display-5">The Logistics Regression Model</h2>
       <p class="lead"> 
         A final run with parameters set as class_weight = balanced, max_iter=1000 and randon_state=42. The f1-score (0.24) and recall (0.82) gave better results when the full data set was run.
         <br>
@@ -344,24 +330,23 @@ load header
         <br>                    
       </p>
     </div>
-  </div>
-</div>
+
 <!-- JUMBOTRON 10 Stroke - Model Deployment  -->
-<div class="row justify-content-center">
+
   <!-- 2.1column                                                                   2.1column -->
   <div class="col-md-12">
-    <div class="jumbotron" style="height: 900px">
+
       <!-- <h1 class="display-5">Model Deployment</h1> -->
       <hr class="my-4">
       
           <a  href="../static/images/model testing/model.PNG" target="_blank">
-            <figure class="fig1_p1">
-              <img src="../static/images/model testing/model.PNG" class="rounded img_p2" alt="Logistics Regression Model" target="_blank" style="height: 700px" > 
+            <figure class="fig1_p3">
+              <img src="../static/images/model testing/model.PNG" class="rounded img_p2" alt="Logistics Regression Model" target="_blank"  > 
               <figcaption>
               </figcaption>
             </figure>
       <a>
-        <h3 class="display-5">Model Deployment</h3>
+        <h2 class="display-5">Model Deployment</h2>
       <p class="lead"> 
         With the logistics model chosen, numbers were rerun for the complete dataset. The model was packaged to run remote using a pickle dump to "finalized_model.sav".         
         <!-- As the values get closer to zero, it indicates minimal to no linear relationship.  -->
@@ -388,8 +373,7 @@ load header
       </p>
       
     </div>
-  </div>
-</div>
+ 
 
 
 
