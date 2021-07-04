@@ -10,11 +10,11 @@ Matplotlib; JavaScript: D3, jQuery, DataTables; HTML: Bootstrap, Bootswatch; Tab
 
 
 
-## <a href="https://github.com/ykrasnikov/Stroke_Analysis_and_Prediction/edit/main/Stroke/Readme.md"> Analysis Report</a>
+### <a href="https://github.com/ykrasnikov/Stroke_Analysis_and_Prediction/edit/main/Stroke/Readme.md"> Analysis Report</a>
 
 <br>
 
-## <a href="https://stroke-analysis-and-prediction.herokuapp.com/">Heroku  - Stroke Analysis and Prediction</a> 
+### <a href="https://stroke-analysis-and-prediction.herokuapp.com/">Heroku  - Stroke Analysis and Prediction</a> 
 
 
 
